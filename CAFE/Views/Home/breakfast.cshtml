@@ -1,0 +1,290 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Завтраки</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        .ellipse1 {
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+        }
+
+        .ellipse2 {
+            position: absolute;
+            right: 0%;
+            top: 0%;
+        }
+
+        .navigation {
+            position: absolute;
+            width: 205px;
+            height: 29px;
+            left: 21px;
+            top: 10px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+            color: #000000;
+        }
+
+        .menu {
+            position: absolute;
+            width: 205px;
+            height: 29px;
+            left: 125px;
+            top: 10px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+            color: #000000;
+        }
+
+        .breakfast {
+            position: absolute;
+            width: 352px;
+            height: 29px;
+            left: 220px;
+            top: 10px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+            color: #000000;
+        }
+
+        .br_1 {
+            position: absolute;
+            left: 10%;
+            right: 55%;
+            top: 20%;
+            bottom: 55%;
+            height: 35;
+            background: #FBF7ED;
+            border-radius: 14px;
+        }
+
+        .br_2 {
+            position: absolute;
+            left: 53.62%;
+            right: 12.51%;
+            top: 20%;
+            bottom: 55%;
+            background: #FBF7ED;
+            border-radius: 14px;
+        }
+
+        .br_3 {
+            position: absolute;
+            left: 10%;
+            right: 55%;
+            top: 55%;
+            bottom: 20%;
+            background: #FBF7ED;
+            border-radius: 14px;
+        }
+
+        .br_4 {
+            position: absolute;
+            left: 53.62%;
+            right: 12.51%;
+            top: 55%;
+            bottom: 20%;
+            background: #FBF7ED;
+            border-radius: 14px;
+        }
+
+        .name_br {
+            position: absolute;
+            left: 45%;
+            right: 20%;
+            top: 0%;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 110%;
+            line-height: 20px;
+            color: #000000;
+        }
+
+        .text_br {
+            position: absolute;
+            left: 45%;
+            right: 3%;
+            top: 33%;
+            bottom: 0%;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 80%;
+            line-height: 17px;
+            color: #000000;
+        }
+
+        .img_br {
+            position: absolute;
+            left: 0%;
+            right: 0%;
+            height: 100%;
+        }
+
+        .plus_br {
+            position: absolute;
+            left: 93%;
+            right: -5.65%;
+            top: 74.36%;
+            bottom: -8.21%;
+            width: 70px;
+            height: 70px;
+        }
+
+        .order {
+            position: absolute;
+            width: 269px;
+            height: 41px;
+            left: 38%;
+            top: 90%;
+            background: #FFFFFF;
+            border: 6px solid #FF6D03;
+            border-radius: 10px;
+        }
+
+        .button_text {
+            position: absolute;
+            left: 5%;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 90%;
+            line-height: 17px;
+            color: #000000;
+        }
+
+        .rub {
+            position: absolute;
+            left: 83.29%;
+            right: 13.18%;
+            top: 9.74%;
+            bottom: 82.56%;
+        }
+
+        .rub_text {
+            position: absolute;
+            left: 88%;
+            right: 5.88%;
+            top: 5%;
+            bottom: 81.54%;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 0px;
+            color: #000000;
+        }
+
+        .ing {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 7px 16px;
+            position: absolute;
+            left: 40%;
+            right: 20%;
+            top: 105%;
+            bottom: -20%;
+            background: #FBF7ED;
+            border: 1px solid #FF6D03;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+        }
+
+        .basket {
+            position: absolute;
+            left: 80%;
+            right: 15%;
+            top: 5%;
+            bottom: 90%;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/ellipse1.png" class="ellipse1">
+    <img src="../images/ellipse2.png" class="ellipse2">
+    <a href="index.html"><div class="navigation">Главная</div></a>
+    <a href="menu.html"><div class="menu">> Меню</div></a>
+    <a href="breakfast.html"><div class="breakfast">> Завтраки</div></a>
+    <div class="basket">
+        <img src="images/3 6.png">
+    </div>
+    <div class="br_1">
+        <p class="name_br">Овсяная каша с ягодами</p>
+        <p class="text_br">Мягкие хлопья с добавлением меда.Каша выкладывается в теплую тралеку и добавляются ягоды.</p>
+        <img src="images/3 1.png" class="img_br">
+        <img src="images/3 5.png" class="plus_br">
+        <img src="images/3 7.png" class="rub">
+        <p class="rub_text">310</p>
+        <a href="">
+            <div class="ing">
+                <p class="button_text">Изменить ингридиенты</p>
+            </div>
+        </a>
+    </div>
+    <div class="br_2">
+        <p class="name_br">Классические яйца Бенедикт</p>
+        <p class="text_br">Яйца пашот заправляются голландским соусом. Ломтики хлеба слегка обжариваются.</p>
+        <img src="images/3 2.png" class="img_br">
+        <img src="images/3 5.png" class="plus_br">
+        <img src="images/3 7.png" class="rub">
+        <p class="rub_text">270</p>
+        <a href="">
+            <div class="ing">
+                <p class="button_text">Изменить ингридиенты</p>
+            </div>
+        </a>
+    </div>
+    <div class="br_3">
+        <p class="name_br">Френч-тост с вареньем</p>
+        <p class="text_br">Хлеб обжаривается на разогретом оливковом масле (с сахарным песком). Подается с ягодным вареньем.</p>
+        <img src="images/3 3.png" class="img_br">
+        <img src="images/3 5.png" class="plus_br">
+        <img src="images/3 7.png" class="rub">
+        <p class="rub_text">390</p>
+        <a href="">
+            <div class="ing">
+                <p class="button_text">Изменить ингридиенты</p>
+            </div>
+        </a>
+    </div>
+    <div class="br_4">
+        <p class="name_br">Сырники с вареньем</p>
+        <p class="text_br">К массе для сырников добавляется ванилин. После обжаривания посыпаются сахарной пудрой. </p>
+        <img src="images/3 4.png" class="img_br">
+        <img src="images/3 5.png" class="plus_br">
+        <img src="images/3 7.png" class="rub">
+        <p class="rub_text">450</p>
+        <a href="">
+            <div class="ing">
+                <p class="button_text">Изменить ингридиенты</p>
+            </div>
+        </a>
+    </div>
+    <a href="">
+        <div class="order">
+            <p class="button_text">Перейти к оформлению заказа</p>
+        </div>
+    </a>
+</body>
+</html>

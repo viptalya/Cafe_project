@@ -1,0 +1,280 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Embassyfood</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        .ellipse {
+            position: absolute;
+            right: 0px;
+            top: 0%;
+            width: 35%;
+            height: auto;
+        }
+     
+        .img1 {
+            position: absolute;
+            right: 10%;
+            top: 15%;
+            width: 30%;
+            height: auto;
+            filter: drop-shadow(-44px 34px 17px rgba(0, 0, 0, 0.08));
+        }
+
+        .menu {
+            position: absolute;
+            width: 191px;
+            height: 63px;
+            right: 4%;
+            top: 2%;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 55px;
+            line-height: 67px;
+            color: #000000;
+        }
+
+        .top {
+            width: 155px;
+            color: #FF6D03;
+            overflow: hidden;
+        }
+
+        .embassy {
+            position: absolute;
+            width: 40%;
+            height: 90px;
+            left: 2%;
+            top: 2%;
+            font-family: Reem Kufi;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 400%;
+            line-height: 90px;
+            color: #26BE0D;
+        }
+
+        .img2 {
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            left: 30%;
+            top: 5%;
+        }
+
+        .text1 {
+            position: absolute;
+            width: 480px;
+            height: auto;
+            left: 10%;
+            top: 150px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 170%;
+            line-height: 37px;
+        }
+
+        .text2 {
+            position: absolute;
+            width: 27%;
+            height: auto;
+            left: 10%;
+            top: 295px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 140%;
+            line-height: 30px;
+        }
+
+        .button1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+            position: absolute;
+            width: 250px;
+            height: 49px;
+            left: 10%;
+            top: 420px;
+            background: #FF6D03;
+            mix-blend-mode: normal;
+            border: 1px solid #FF6D03;
+            box-sizing: border-box;
+            box-shadow: -4px 12px 21px #FBE5C5;
+            border-radius: 14px;
+        }
+
+        .button2 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+            position: absolute;
+            width: 310px;
+            height: 49px;
+            left: 35%;
+            top: 420px;
+            background: #FFFFFF;
+            mix-blend-mode: normal;
+            border: 4px solid #FF6D03;
+            box-sizing: border-box;
+            box-shadow: -4px 12px 21px rgba(240, 152, 21, 0.25);
+            border-radius: 14px;
+        }
+
+        .b1_text {
+            position: absolute;
+            top: 0px;
+            font-family: Montserrat;
+            font-size: 150%;
+            margin: 10px 0px;
+            color: #000000;
+        }
+
+        .b2_text {
+            position: absolute;
+            top: -3px;
+            font-family: Montserrat;
+            font-size: 150%;
+            color: #000000;
+            margin: 10px 0px;
+        }
+
+        .frame1 {
+            position: absolute;
+            width: 202px;
+            height: 109px;
+            left: 10%;
+            top: 550px;
+            background: rgba(255, 251, 242, 0.96);
+            border: 1px solid #FDFDFD;
+            box-shadow: -1px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 14px;
+        }
+
+        .frame2 {
+            position: absolute;
+            width: 202px;
+            height: 109px;
+            left: 30%;
+            top: 550px;
+            background: rgba(255, 251, 242, 0.96);
+            border: 1px solid #FDFDFD;
+            box-shadow: -1px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 14px;
+        }
+
+        .frame3 {
+            position: absolute;
+            width: 202px;
+            height: 109px;
+            left: 50%;
+            top: 550px;
+            background: rgba(255, 251, 242, 0.96);
+            border: 1px solid #FDFDFD;
+            box-shadow: -1px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 14px;
+        }
+
+        .fr_img {
+            position: absolute;
+            width: auto;
+            height: 30px;
+            left: 86px;
+            top: 17px;
+        }
+
+        .fr1_text {
+            position: absolute;
+            width: 143px;
+            height: 20px;
+            left: 31px;
+            top: 54px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: #000000;
+        }
+
+        .fr2_text {
+            position: absolute;
+            width: 91px;
+            height: 20px;
+            left: 55px;
+            top: 54px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: #000000;
+        }
+
+        .fr3_text {
+            position: absolute;
+            left: 17.82%;
+            right: 17.82%;
+            top: 54px;
+            bottom: 22.02%;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <img src="/images/1 6.png" class="ellipse">
+    <img src="/images/1 1.png" class="img1">
+    <a href="/menu"><div class="menu">Меню</div></a>
+    <a href="/">
+        <div class="embassy">
+            Embassy <font color="#FF6D03">Food</font>
+            <img src="~/images/1 2.png" />
+        </div>
+    </a>
+    <p class="text1">В нашем ресторане основное меню - виртуозный микс из блюд-хитов разных стран мира!</p>
+    <p class="text2">Вас обслужат лучшие повара по доступной цене.</p>
+    <div class="button1">
+        <a href="">
+            <p class="b1_text">Заказать доставку</p>
+        </a>
+    </div>
+    <div class="button2">
+        <a href="">
+            <p class="b2_text">Забронировать столик</p>
+        </a>
+    </div>
+    <div class="frame1">
+
+        <img src="images/1 3.png" class="fr_img">
+        <p class="fr1_text">ул. Пушкина д.27</p>
+
+    </div>
+    <div class="frame2">
+        <img src="images/1 4.png" class="fr_img">
+        <p class="fr2_text">10:00-23:00</p>
+    </div>
+    <div class="frame3">
+        <img src="images/1 5.png" class="fr_img">
+        <p class="fr3_text">8-800-555-35-35</p>
+
+    </div>
+</body>
+</html>
