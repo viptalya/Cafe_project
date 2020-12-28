@@ -35,17 +35,12 @@ namespace CAFE.Controllers
         {
             return View();
         }
-        [Route("/Add")]
-        public IActionResult Add()
-        {
-            IEnumerable<customer> customers = db.Customers;
-            ViewBag.Customers = customers;
-            return View();
-        }
         [Route("/Addcustomer")]
         [HttpGet]
         public IActionResult Addcustomer()
         {
+            IEnumerable<customer> customers = db.Customers;
+            ViewBag.Customers = customers;
             return View();
         }
         [HttpPost]
