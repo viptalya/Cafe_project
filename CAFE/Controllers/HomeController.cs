@@ -38,7 +38,7 @@ namespace CAFE.Controllers
         [Route("/addcustomer")]
         [HttpGet]
         public IActionResult Addcustomer()
-        {   
+        {
             return View();
         }
         [Route("/addcustomer")]
@@ -48,6 +48,25 @@ namespace CAFE.Controllers
             db.Customers.Add(new customer { cus_Sname = cus_Sname, cus_Name = cus_Name, cus_Pname = cus_Pname, cus_number = cus_number, cus_email = cus_email });
             db.SaveChanges();
             return RedirectPermanent("/");
+        }
+        [Route("/Reservation")]
+        [HttpGet]
+        public IActionResult Reservation()
+        {
+            return View();
+        }
+        [Route("/Reservation")]
+        [HttpPost]
+        public IActionResult Reservation(int table_number, DateTime table_order_time)
+        {
+            db.Tables.Add(new table { table_number = table_number, table_order_time = table_order_time });
+            db.SaveChanges();
+            return RedirectPermanent("/");
+        }
+        [Route("/Endreservation")]
+        public IActionResult Endreservation()
+        {
+            return View();
         }
     }
 }

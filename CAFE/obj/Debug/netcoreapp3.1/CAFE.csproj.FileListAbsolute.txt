@@ -285,3 +285,5 @@ C:\Users\пк\Desktop\Cafe_project-main\CAFE\obj\Debug\netcoreapp3.1\CAFE.pdb
 C:\Users\пк\Desktop\Cafe_project-main\CAFE\obj\Debug\netcoreapp3.1\CAFE.genruntimeconfig.cache
 C:\Users\пк\Desktop\Cafe_project-main\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\Addcustomer.cshtml.g.cs
 C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\Addcustomer.cshtml.g.cs
+C:\Users\пк\Desktop\Cafe_project-main\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\reservation.cshtml.g.cs
+C:\Users\пк\Desktop\Cafe_project-main\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\endreservation.cshtml.g.cs
