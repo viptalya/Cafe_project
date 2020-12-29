@@ -35,20 +35,19 @@ namespace CAFE.Controllers
         {
             return View();
         }
-        [Route("/Addcustomer")]
+        [Route("/addcustomer")]
         [HttpGet]
         public IActionResult Addcustomer()
-        {
-            IEnumerable<customer> customers = db.Customers;
-            ViewBag.Customers = customers;
+        {   
             return View();
         }
+        [Route("/addcustomer")]
         [HttpPost]
         public IActionResult Addcustomer(string cus_Sname, string cus_Name, string cus_Pname, string cus_number, string cus_email)
         {
             db.Customers.Add(new customer { cus_Sname = cus_Sname, cus_Name = cus_Name, cus_Pname = cus_Pname, cus_number = cus_number, cus_email = cus_email });
             db.SaveChanges();
-            return RedirectPermanent("/Addcustomer");
+            return RedirectPermanent("/");
         }
     }
 }
