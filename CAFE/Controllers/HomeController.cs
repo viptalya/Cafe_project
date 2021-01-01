@@ -33,6 +33,8 @@ namespace CAFE.Controllers
         [Route("/menu/Завтраки")]
         public IActionResult Breakfast()
         {
+            IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            ViewBag.menu_items = Menu_items;
             return View();
         }
         [Route("/addcustomer")]
@@ -66,6 +68,20 @@ namespace CAFE.Controllers
         [Route("/Endreservation")]
         public IActionResult Endreservation()
         {
+            return View();
+        }
+        [Route("/menu/Мясные блюда")]
+        public IActionResult Meat()
+        {
+            IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            ViewBag.menu_items = Menu_items;
+            return View();
+        }
+        [Route("/menu/Блюда из рыбы")]
+        public IActionResult Fish()
+        {
+            IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            ViewBag.menu_items = Menu_items;
             return View();
         }
     }
