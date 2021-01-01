@@ -30,7 +30,7 @@ namespace CAFE.Controllers
             ViewBag.mealtimes = Mealtimes;
             return View();
         }
-        [Route("/menu/breakfast")]
+        [Route("/menu/Завтраки")]
         public IActionResult Breakfast()
         {
             return View();

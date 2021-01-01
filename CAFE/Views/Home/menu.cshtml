@@ -76,18 +76,21 @@
             text-align: center;
             color: #000000;
         }
+        a {
+            text-decoration:none;
+        }
     </style>
 </head>
 <body>
     <img src="images/ellipse1.png" class="ellipse1">
     <img src="images/ellipse2.png" class="ellipse2">
-    <a href="index.html"><div class="navigation">Главная</div></a>
-    <a href="menu.html"><div class="menu">>Меню</div></a>
+    <a href="/"><div class="navigation">Главная</div></a>
+    <a href="/menu"><div class="menu">>Меню</div></a>
     <div class="flex-container">
         @foreach (var m in ViewBag.mealtimes)
         {
             <div class="item">
-                <a href="breakfast.html">
+                <a href="/menu/@m.mealtime_name">
                     <img src="images/2 @m.mealtimeId .png">
                     <div class="item-text">@m.mealtime_name</div>
                 </a>
