@@ -10,6 +10,7 @@ namespace CAFE.Models
         public int menu_itemId { get; set; }
         public int menu_item_price { get; set; }
         public string menu_item_name { get; set; }
+        public string menu_item_desc { get; set; }
         public virtual ICollection<ingredient> Ingredients { get; set; }
         public virtual ICollection<mo> Mos { get; set; }
         public menu_item()

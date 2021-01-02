@@ -20,10 +20,10 @@
     <None Include="wwwroot\images\2 4 .png" />
     <None Include="wwwroot\images\2 5 .png" />
     <None Include="wwwroot\images\2 6 .png" />
-    <None Include="wwwroot\images\3 1.png" />
-    <None Include="wwwroot\images\3 2.png" />
-    <None Include="wwwroot\images\3 3.png" />
-    <None Include="wwwroot\images\3 4.png" />
+    <None Include="wwwroot\images\Овсяная каша с ягодами .png" />
+    <None Include="wwwroot\images\Сырники с вареньем .png" />
+    <None Include="wwwroot\images\Френч-тост с вареньем .png" />
+    <None Include="wwwroot\images\Классические яйца Бенедикт .png" />
     <None Include="wwwroot\images\3 5.png" />
     <None Include="wwwroot\images\3 6.png" />
     <None Include="wwwroot\images\3 7.png" />

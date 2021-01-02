@@ -33,6 +33,13 @@ namespace CAFE.Controllers
         [Route("/menu/breakfast")]
         public IActionResult Breakfast()
         {
+            IEnumerable<menu_item> Menu_Items = db.Menu_Items;
+            ViewBag.menu_items = Menu_Items;
+            return View();
+        }
+        [Route("/menu/meat")]
+        public IActionResult Meat()
+        {
             return View();
         }
         [Route("/addcustomer")]
