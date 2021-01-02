@@ -289,3 +289,10 @@ C:\Users\пк\Desktop\Cafe_project-main\CAFE\obj\Debug\netcoreapp3.1\Razor\Views
 C:\Users\пк\Desktop\Cafe_project-main\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\endreservation.cshtml.g.cs
 C:\Users\пк\Desktop\Cafe_project-main\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\meat.cshtml.g.cs
 C:\Users\пк\Desktop\Cafe_project-main\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\fish.cshtml.g.cs
+C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\endreservation.cshtml.g.cs
+C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\fish.cshtml.g.cs
+C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\meat.cshtml.g.cs
+C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\reservation.cshtml.g.cs
+C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\deserts.cshtml.g.cs
+C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\drinks.cshtml.g.cs
+C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\salads.cshtml.g.cs

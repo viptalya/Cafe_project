@@ -20,13 +20,6 @@
     <None Include="wwwroot\images\2 4 .png" />
     <None Include="wwwroot\images\2 5 .png" />
     <None Include="wwwroot\images\2 6 .png" />
-    <None Include="wwwroot\images\3 1.png" />
-    <None Include="wwwroot\images\3 2.png" />
-    <None Include="wwwroot\images\3 3.png" />
-    <None Include="wwwroot\images\3 4.png" />
-    <None Include="wwwroot\images\3 5.png" />
-    <None Include="wwwroot\images\3 6.png" />
-    <None Include="wwwroot\images\3 7.png" />
     <None Include="wwwroot\images\favicon.ico" />
   </ItemGroup>
 

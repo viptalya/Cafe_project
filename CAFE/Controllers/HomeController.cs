@@ -84,5 +84,26 @@ namespace CAFE.Controllers
             ViewBag.menu_items = Menu_items;
             return View();
         }
+        [Route("/menu/Десерты")]
+        public IActionResult Deserts()
+        {
+            IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            ViewBag.menu_items = Menu_items;
+            return View();
+        }
+        [Route("/menu/Салаты")]
+        public IActionResult Salads()
+        {
+            IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            ViewBag.menu_items = Menu_items;
+            return View();
+        }
+        [Route("/menu/Напитки")]
+        public IActionResult Drinks()
+        {
+            IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            ViewBag.menu_items = Menu_items;
+            return View();
+        }
     }
 }

@@ -1,0 +1,264 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Напитки</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        .ellipse1 {
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+        }
+
+        .ellipse2 {
+            position: absolute;
+            right: 0%;
+            top: 0%;
+        }
+
+        .navigation {
+            position: absolute;
+            width: 205px;
+            height: 29px;
+            left: 21px;
+            top: 10px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+            color: #000000;
+        }
+
+        .menu {
+            position: absolute;
+            width: 205px;
+            height: 29px;
+            left: 125px;
+            top: 10px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+            color: #000000;
+        }
+
+        .breakfast {
+            position: absolute;
+            width: 352px;
+            height: 29px;
+            left: 220px;
+            top: 10px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+            color: #000000;
+        }
+        .name_br {
+            position: absolute;
+            left: 45%;
+            right: 20%;
+            top: 0%;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 110%;
+            line-height: 20px;
+            color: #000000;
+        }
+
+        .text_br {
+            position: absolute;
+            left: 45%;
+            right: 3%;
+            top: 33%;
+            bottom: 0%;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 80%;
+            line-height: 17px;
+            color: #000000;
+        }
+
+        .img_br {
+            position: absolute;
+            left: 0%;
+            right: 0%;
+            height: 100%;
+        }
+
+        .plus_br {
+            position: absolute;
+            left: 93%;
+            right: -5.65%;
+            top: 74.36%;
+            bottom: -8.21%;
+            width: 70px;
+            height: 70px;
+        }
+
+        .order {
+            position: absolute;
+            width: 269px;
+            height: 41px;
+            left: 38%;
+            top: 90%;
+            background: #FFFFFF;
+            border: 6px solid #FF6D03;
+            border-radius: 10px;
+        }
+
+        .button_text {
+            position: absolute;
+            left: 5%;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 90%;
+            line-height: 17px;
+            color: #000000;
+        }
+
+        .rub {
+            position: absolute;
+            left: 83.29%;
+            right: 13.18%;
+            top: 9.74%;
+            bottom: 82.56%;
+        }
+
+        .rub_text {
+            position: absolute;
+            left: 88%;
+            right: 5.88%;
+            top: 5%;
+            bottom: 81.54%;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 0px;
+            color: #000000;
+        }
+
+        .ing {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 7px 16px;
+            position: absolute;
+            left: 40%;
+            right: 20%;
+            top: 105%;
+            bottom: -20%;
+            background: #FBF7ED;
+            border: 1px solid #FF6D03;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+        }
+
+        .basket {
+            position: absolute;
+            left: 80%;
+            right: 15%;
+            top: 5%;
+            bottom: 90%;
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        a {
+            text-decoration:none;
+        }
+        .item {
+            background: #FBF7ED;
+            margin-top: 100px;
+            margin-right: 100px;
+            margin-left: 100px;
+            flex: 33%;
+            border-radius: 14px;
+            height: 195px;
+        }
+        .item-header {
+            left: 200px;
+            bottom: 190px;
+            position: relative;
+            font-family: Montserrat;
+            font-weight: bold;
+            width: 250px;
+        }
+        .item-text {
+            left: 200px;
+            bottom: 190px;
+            position: relative;
+            font-family: Montserrat;
+            width: 250px;
+        }
+        .item-price {
+            left: 220px;
+            width: 200px;
+            bottom: 190px;
+            position: relative;
+            font-family: Montserrat;
+        }
+        .rubl {
+            left: 200px;
+            bottom: 208px;
+            position: relative;
+        }
+        .change {
+            border: 1px solid #FF6D03;
+            border-radius: 10px;
+            position: relative;
+            width: 200px;
+            text-align: center;
+            left: 280px;
+            bottom: 150px;
+        }
+        .ddd{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/ellipse1.png" class="ellipse1">
+    <img src="../images/ellipse2.png" class="ellipse2">
+    <a href="/"><div class="navigation">Главная</div></a>
+    <a href="/menu"><div class="menu">> Меню</div></a>
+    <a href="/menu/Напитки"><div class="breakfast">> Напитки</div></a>
+    <div class="basket">
+        <img src="../images/3 6.png">
+    </div>
+    <div class="flex-container">
+        @foreach (var mi in ViewBag.menu_items)
+        {
+            @if (mi.mealtimeId == 6)
+            {
+                <div class="item">
+                    <img src="../images/@mi.menu_item_name .png">
+                    <div class="item-text">@mi.menu_item_name</div>
+                    <div class="item-text">@mi.desc</div>
+                    <div class="item-price">@mi.menu_item_price</div>
+                    <img src="../images/r.png" class="rubl" />
+                    <div class="change">
+                        <a href=""><p>Изменить ингридиенты</p></a>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</body>
+</html>
