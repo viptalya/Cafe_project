@@ -5697,11 +5697,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\пк\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\dimon\\.nuget\\packages\\": {}
+>>>>>>> 05a3788746d2f6707a32e838ed7309da389913cb
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\пк\\Desktop\\Cafe_project-master\\CAFE\\CAFE.csproj",
       "projectName": "CAFE",
       "projectPath": "C:\\Users\\пк\\Desktop\\Cafe_project-master\\CAFE\\CAFE.csproj",
@@ -5711,12 +5716,27 @@
       "configFilePaths": [
         "C:\\Users\\пк\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "C:\\Users\\dimon\\Desktop\\Cafe_project\\CAFE\\CAFE.csproj",
+      "projectName": "CAFE",
+      "projectPath": "C:\\Users\\dimon\\Desktop\\Cafe_project\\CAFE\\CAFE.csproj",
+      "packagesPath": "C:\\Users\\dimon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dimon\\Desktop\\Cafe_project\\CAFE\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\dimon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "D:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> 05a3788746d2f6707a32e838ed7309da389913cb
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+<<<<<<< HEAD
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+=======
+        "D:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+>>>>>>> 05a3788746d2f6707a32e838ed7309da389913cb
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5774,7 +5794,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+>>>>>>> 05a3788746d2f6707a32e838ed7309da389913cb
       }
     }
   }

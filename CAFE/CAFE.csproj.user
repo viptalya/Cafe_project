@@ -4,6 +4,10 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
+<<<<<<< HEAD
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
+=======
+    <ActiveDebugProfile>CAFE</ActiveDebugProfile>
+>>>>>>> 05a3788746d2f6707a32e838ed7309da389913cb
   </PropertyGroup>
 </Project>

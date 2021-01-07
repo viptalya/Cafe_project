@@ -296,6 +296,7 @@ C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Hom
 C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\deserts.cshtml.g.cs
 C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\drinks.cshtml.g.cs
 C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\salads.cshtml.g.cs
+<<<<<<< HEAD
 C:\Users\пк\Desktop\Cafe_project-master\CAFE\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\пк\Desktop\Cafe_project-master\CAFE\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\пк\Desktop\Cafe_project-master\CAFE\bin\Debug\netcoreapp3.1\CAFE.StaticWebAssets.xml
@@ -399,3 +400,5 @@ C:\Users\пк\Desktop\Cafe_project-master\CAFE\obj\Debug\netcoreapp3.1\CAFE.cspr
 C:\Users\пк\Desktop\Cafe_project-master\CAFE\obj\Debug\netcoreapp3.1\CAFE.dll
 C:\Users\пк\Desktop\Cafe_project-master\CAFE\obj\Debug\netcoreapp3.1\CAFE.pdb
 C:\Users\пк\Desktop\Cafe_project-master\CAFE\obj\Debug\netcoreapp3.1\CAFE.genruntimeconfig.cache
+=======
+>>>>>>> 05a3788746d2f6707a32e838ed7309da389913cb

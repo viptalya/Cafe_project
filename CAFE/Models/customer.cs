@@ -13,6 +13,7 @@ namespace CAFE.Models
         public string cus_Pname { get; set; }
         public string cus_number { get; set; }
         public string cus_email { get; set; }
+<<<<<<< HEAD
         public string cus_street { get; set; }
         public string cus_house { get; set; }
         public string cus_entrance { get; set; }
@@ -23,6 +24,12 @@ namespace CAFE.Models
         {
             Orders = new List<order>();
             Tables = new List<table>();
+=======
+        public virtual ICollection<order> Orders { get; set; }
+        public customer()
+        {
+            Orders = new List<order>();
+>>>>>>> 05a3788746d2f6707a32e838ed7309da389913cb
         }
     }
 }
