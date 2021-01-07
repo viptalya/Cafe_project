@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Addcustomer";
+    Layout = null;
+}
+<style>
+    .Rectangle {
+        position: absolute;
+        width: 600px;
+        height: 500px;
+        left: 420px;
+        top: 82px;
+        background: #FFFFFF;
+        border: 2px solid #E5E5E5;
+        box-sizing: border-box;
+    }
+    .ellipse1 {
+        position: absolute;
+        left: 0px;
+        top: 572px;
+    }
+    .ellipse2 {
+        position: absolute;
+        right: 0%;
+        top: 0%;
+    }
+    .add {
+        width: 511px;
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+    }
+    .add1 {
+        width: 511px;
+        position: absolute;
+        top: 130px;
+        right: 50px;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+    }
+    .add2 {
+        width: 511px;
+        position: absolute;
+        top: 210px;
+        right: 50px;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+    }
+    .add3 {
+        width: 511px;
+        position: absolute;
+        top: 290px;
+        right: 50px;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+    }
+    .add4 {
+        width: 511px;
+        position: absolute;
+        top: 370px;
+        right: 50px;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+    }
+    .Sname {
+        position: absolute;
+        left: 50px;
+        top: 10px;
+    }
+    .Name {
+        position: absolute;
+        left: 50px;
+        top: 90px;
+    }
+    .Pname {
+        position: absolute;
+        left: 50px;
+        top: 170px;
+    }
+    .Number {
+        position: absolute;
+        left: 50px;
+        top: 250px;
+    }
+    .Email {
+        position: absolute;
+        left: 50px;
+        top: 330px;
+    }
+    .zzzz {
+        position: absolute;
+        height: 30px;
+        left: 40.69%;
+        right: 40.62%;
+        bottom: 20px;
+        background: #FF6D03;
+        border: 6px solid #FF6D03;
+        border-radius: 6px;
+    }
+</style>
+<img src="/images/ellipse1.png" class="ellipse1" />
+<img src="/images/ellipse2.png" class="ellipse2" />
+<div class="Rectangle">
+    <form method="post" action="">
+        <input type="hidden" value="@ViewBag.customers" />
+        <table>
+            <tr>
+                <td class="Sname"><p>Фамилия</p></td>
+                <td><input type="text" name="cus_Sname" class="add" /></td>
+                <td class="Name"><p>Имя</p></td>
+                <td><input type="text" name="cus_Name" class="add1" /></td>
+                <td class="Pname"><p>Отчество</p></td>
+                <td><input type="text" name="cus_Pname" class="add2" /></td>
+                <td class="Number"><p>Номер телефона</p></td>
+                <td><input type="text" name="cus_number" class="add3" /></td>
+                <td class="Email"><p>Почта</p></td>
+                <td><input type="text" name="cus_email" class="add4" /></td>
+            </tr>
+            <tr><td><input type="submit" value="Заказать" class="zzzz" /> </td><td></td></tr>
+        </table>
+    </form>
+</div>
