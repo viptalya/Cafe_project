@@ -9,7 +9,6 @@ namespace CAFE.Models
     {
         public int ingredientId { get; set; }
         public string ingredient_name { get; set; }
-        public int ingredient_price { get; set; }
         public int? menu_itemId { get; set; }
         public virtual menu_item Menu_Item { get; set; }
     }

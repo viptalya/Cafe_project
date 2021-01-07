@@ -15,6 +15,9 @@ namespace CAFE.Models
         public DbSet<menu_item> Menu_Items { get; set; }
         public DbSet<order> Orders { get; set; }
         public DbSet<table> Tables { get; set; }
+        public DbSet<admin> Admins { get; set; }
+        public DbSet<courier> Couriers { get; set; }
+        public DbSet<mo> Mos { get; set; }
         public cafecontext(DbContextOptions<cafecontext> options)
             : base(options)
         {

@@ -10,7 +10,7 @@ namespace CAFE.Models
         public int tableId { get; set; }
         public int table_number { get; set; }
         public DateTime table_order_time { get; set; }
-        public int? orderId { get; set; }
-        public virtual order Order { get; set; }
+        public int? customerId { get; set; }
+        public virtual customer Customer { get; set; }
     }
 }

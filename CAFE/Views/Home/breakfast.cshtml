@@ -214,6 +214,13 @@
             position: relative;
             font-family: Montserrat;
         }
+        .item-weight {
+            left: 220px;
+            width: 200px;
+            bottom: 210px;
+            position: relative;
+            font-family: Montserrat;
+        }
         .rubl {
             left: 200px;
             bottom: 208px;
@@ -240,7 +247,7 @@
     <a href="/menu"><div class="menu">> Меню</div></a>
     <a href="/menu/Завтраки"><div class="breakfast">> Завтраки</div></a>
     <div class="basket">
-        <img src="../images/3 6.png">
+        <img src="../images/ko.png">
     </div>
     <div class="flex-container">
         @foreach (var mi in ViewBag.menu_items)
@@ -253,6 +260,7 @@
                     <div class="item-text">@mi.desc</div>
                     <div class="item-price">@mi.menu_item_price</div>
                     <img src="../images/r.png" class="rubl" />
+                    <div class="item-weight">@mi.weight гр</div>
                     <div class="change">
                         <a href=""><p>Изменить ингридиенты</p></a>
                     </div>
