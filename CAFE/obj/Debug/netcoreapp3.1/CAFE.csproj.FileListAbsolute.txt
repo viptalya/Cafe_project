@@ -399,3 +399,4 @@ C:\Users\пк\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\CAFE.csproj.Copy
 C:\Users\пк\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\CAFE.dll
 C:\Users\пк\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\CAFE.pdb
 C:\Users\пк\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\CAFE.genruntimeconfig.cache
+C:\Users\пк\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\Addcourier.cshtml.g.cs

@@ -45,9 +45,9 @@ namespace CAFE.Controllers
         }
         [Route("/addcustomer")]
         [HttpPost]
-        public IActionResult Addcustomer(string cus_Sname, string cus_Name, string cus_Pname, string cus_number, string cus_email)
+        public IActionResult Addcustomer(string cus_Sname, string cus_Name, string cus_Pname, string cus_number, string cus_email, string cus_street, string cus_house, string cus_entrance, string cus_apartment)
         {
-            db.Customers.Add(new customer { cus_Sname = cus_Sname, cus_Name = cus_Name, cus_Pname = cus_Pname, cus_number = cus_number, cus_email = cus_email });
+            db.Customers.Add(new customer { cus_Sname = cus_Sname, cus_Name = cus_Name, cus_Pname = cus_Pname, cus_number = cus_number, cus_email = cus_email, cus_street = cus_street, cus_house = cus_house, cus_entrance = cus_entrance, cus_apartment = cus_apartment});
             db.SaveChanges();
             return RedirectPermanent("/");
         }
@@ -63,7 +63,7 @@ namespace CAFE.Controllers
         {
             db.Tables.Add(new table { table_number = table_number, table_order_time = table_order_time });
             db.SaveChanges();
-            return RedirectPermanent("/");
+            return RedirectPermanent("/Endreservation");
         }
         [Route("/Endreservation")]
         public IActionResult Endreservation()
@@ -105,5 +105,20 @@ namespace CAFE.Controllers
             ViewBag.menu_items = Menu_items;
             return View();
         }
+        [Route("/Addcourier")]
+        [HttpGet]
+        public IActionResult Addcourier()
+        {
+            return View();
+        }
+        [Route("/Addcourier")]
+        [HttpPost]
+        public IActionResult Addcourier(string c_Sname, string c_name, string c_Pname, string c_phone, string c_email, string c_login, string c_password)
+        {
+            db.Couriers.Add(new courier { c_Sname = c_Sname, c_name = c_name, c_Pname = c_Pname, c_phone = c_phone, c_email = c_email, c_login = c_login, c_password = c_password });
+            db.SaveChanges();
+            return RedirectPermanent("/");
+        }
+
     }
 }

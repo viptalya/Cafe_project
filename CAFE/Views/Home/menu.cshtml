@@ -57,8 +57,6 @@
         }
 
         .item {
-            @*            border: 3px solid #FF6D03;
-            border-radius: 14px;*@
             margin-top: 5%;
             text-align: center;
             flex: 0 0 33.333333%;
@@ -69,15 +67,15 @@
             margin-left: auto;
             margin-right: auto;
             font-family: Montserrat;
-            font-style: normal;
-            font-weight: 500;
             font-size: 200%;
             line-height: 32px;
-            text-align: center;
             color: #000000;
         }
         a {
             text-decoration:none;
+        }
+        .pic {
+            height: 180px;
         }
     </style>
 </head>
@@ -91,7 +89,7 @@
         {
             <div class="item">
                 <a href="/menu/@m.mealtime_name">
-                    <img src="images/2 @m.mealtimeId .png">
+                    <div class="pic"><img src="images/2 @m.mealtimeId .png"></div>
                     <div class="item-text">@m.mealtime_name</div>
                 </a>
             </div>

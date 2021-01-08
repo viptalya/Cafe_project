@@ -1,7 +1,7 @@
-﻿@{
-    ViewBag.Title = "Reservation";
-    Layout = null;
-}
+﻿@{ ViewBag.Title = "Reservation";
+                Layout = null; }
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <style>
     .Rectangle {
         position: absolute;
@@ -13,6 +13,7 @@
         border: 2px solid #E5E5E5;
         box-sizing: border-box;
     }
+
     .ellipse1 {
         position: absolute;
         left: 0px;
@@ -24,16 +25,19 @@
         right: 0%;
         top: 0%;
     }
+
     .Ntable {
         position: absolute;
         left: 50px;
         top: 10px;
     }
+
     .Time {
         position: absolute;
         left: 50px;
         top: 90px;
     }
+
     .add {
         width: 511px;
         position: absolute;
@@ -43,6 +47,7 @@
         border: 2px solid #FF6D03;
         border-radius: 3px;
     }
+
     .add1 {
         width: 511px;
         position: absolute;
@@ -52,6 +57,7 @@
         border: 2px solid #FF6D03;
         border-radius: 3px;
     }
+
     .zzzz {
         position: absolute;
         height: 30px;
@@ -62,14 +68,15 @@
         border: 6px solid #FF6D03;
         border-radius: 6px;
     }
+
     a {
-        text-decoration:none;
+        text-decoration: none;
     }
 </style>
 <img src="/images/ellipse1.png" class="ellipse1" />
 <img src="/images/ellipse2.png" class="ellipse2" />
 <div class="Rectangle">
-    <form method="post" action="/Endreservation">
+    <form method="post">
         <input type="hidden" value="@ViewBag.tables" />
         <p class="Ntable">Номер стола</p>
         <select name="table_number" class="add">
@@ -79,6 +86,6 @@
         </select>
         <p class="Time">Время</p>
         <input type="datetime" name="table_order_time" class="add1" />
-        <a href="/Endreservation"><input type="submit" value="Забронировать" class="zzzz" /></a>
+        <input type="submit" value="Забронировать" class="zzzz" />
     </form>
 </div>

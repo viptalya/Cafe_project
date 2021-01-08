@@ -1,18 +1,20 @@
-﻿@{
-    ViewBag.Title = "Endreservation";
-    Layout = null;
-}
+﻿@{ ViewBag.Title = "Endreservation";
+                Layout = null; }
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <style>
     .ellipse1 {
         position: absolute;
         left: 0px;
         top: 572px;
     }
+
     .ellipse2 {
         position: absolute;
         right: 0%;
         top: 0%;
     }
+
     .za {
         position: absolute;
         width: 792px;
@@ -20,9 +22,24 @@
         top: 187px;
         font-size: 70px;
         text-align: center;
-        font-family: monospace;
+        font-family: Montserrat;
+    }
+
+    .navigation {
+        position: absolute;
+        width: 205px;
+        height: 29px;
+        left: 21px;
+        top: 10px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
     }
 </style>
+<a href="/"><div class="navigation">Главная</div></a>
 <img src="/images/ellipse1.png" class="ellipse1" />
 <img src="/images/ellipse2.png" class="ellipse2" />
-<p class="za">Ваша заявка принята!</p> 
+<p class="za">Ваша заявка принята!</p>

@@ -1,4 +1,4 @@
-﻿@{ ViewBag.Title = "Addcustomer";
+﻿@{ ViewBag.Title = "Addcourier";
                 Layout = null; }
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -87,27 +87,7 @@
     }
 
     .add6 {
-        width: 120px;
-        position: absolute;
-        top: 530px;
-        right: 440px;
-        background: #FFFFFF;
-        border: 2px solid #FF6D03;
-        border-radius: 3px;
-    }
-
-    .add7 {
-        width: 120px;
-        position: absolute;
-        top: 530px;
-        right: 245px;
-        background: #FFFFFF;
-        border: 2px solid #FF6D03;
-        border-radius: 3px;
-    }
-
-    .add8 {
-        width: 120px;
+        width: 511px;
         position: absolute;
         top: 530px;
         right: 50px;
@@ -151,30 +131,16 @@
         font-family: Montserrat;
     }
 
-    .Street {
+    .Login {
         position: absolute;
         left: 50px;
         top: 410px;
         font-family: Montserrat;
     }
 
-    .House {
+    .Password {
         position: absolute;
         left: 50px;
-        top: 490px;
-        font-family: Montserrat;
-    }
-
-    .Entrance {
-        position: absolute;
-        left: 245px;
-        top: 490px;
-        font-family: Montserrat;
-    }
-
-    .Apartment {
-        position: absolute;
-        left: 440px;
         top: 490px;
         font-family: Montserrat;
     }
@@ -194,29 +160,25 @@
 <img src="/images/ellipse2.png" class="ellipse2" />
 <div class="Rectangle">
     <form method="post" action="">
-        <input type="hidden" value="@ViewBag.customers" />
+        <input type="hidden" value="@ViewBag.couriers" />
         <table>
             <tr>
                 <td class="Sname"><p>Фамилия</p></td>
-                <td><input type="text" name="cus_Sname" class="add" /></td>
+                <td><input type="text" name="c_Sname" class="add" /></td>
                 <td class="Name"><p>Имя</p></td>
-                <td><input type="text" name="cus_Name" class="add1" /></td>
+                <td><input type="text" name="c_Name" class="add1" /></td>
                 <td class="Pname"><p>Отчество</p></td>
-                <td><input type="text" name="cus_Pname" class="add2" /></td>
+                <td><input type="text" name="c_Pname" class="add2" /></td>
                 <td class="Number"><p>Номер телефона</p></td>
                 <td><input type="text" name="cus_number" class="add3" /></td>
                 <td class="Email"><p>Почта</p></td>
                 <td><input type="text" name="cus_email" class="add4" /></td>
-                <td class="Street"><p>Улица</p></td>
-                <td><input type="text" name="cus_street" class="add5" /></td>
-                <td class="House"><p>Дом</p></td>
-                <td><input type="text" name="cus_house" class="add6" /></td>
-                <td class="Entrance"><p>Подъезд</p></td>
-                <td><input type="text" name="cus_entrance" class="add7" /></td>
-                <td class="Apartment"><p>Квартира</p></td>
-                <td><input type="text" name="cus_apartment" class="add8" /></td>
+                <td class="Login"><p>Логин</p></td>
+                <td><input type="text" name="c_login" class="add5" /></td>
+                <td class="Password"><p>Пароль</p></td>
+                <td><input type="text" name="c_password" class="add6" /></td>
             </tr>
-            <tr><td><input type="submit" value="Заказать" class="zzzz" /> </td><td></td></tr>
+            <tr><td><input type="submit" value="Зарегистрироваться" class="zzzz" /> </td><td></td></tr>
         </table>
     </form>
 </div>
