@@ -1,0 +1,23 @@
+﻿@model IEnumerable<CAFE.Models.customer>
+@{
+    ViewData["Title"] = "Test page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h1>LOL</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<table>
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td><p>@customer.customerId</p></td>
+            <td><p>@customer.cus_Sname</p></td>
+            <td><p>@customer.cus_Name</p></td>
+            <td><p>@customer.cus_Pname</p></td>
+            <td><p>@customer.cus_number</p></td>
+            <td><p>@customer.cus_email</p></td>
+        </tr>
+    }
+</table>
