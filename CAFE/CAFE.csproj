@@ -14,12 +14,12 @@
     <None Include="wwwroot\images\1 6.png" />
     <None Include="wwwroot\images\ellipse1.png" />
     <None Include="wwwroot\images\ellipse2.png" />
-    <None Include="wwwroot\images\2 1 .png" />
-    <None Include="wwwroot\images\2 2 .png" />
-    <None Include="wwwroot\images\2 3 .png" />
-    <None Include="wwwroot\images\2 4 .png" />
-    <None Include="wwwroot\images\2 5 .png" />
-    <None Include="wwwroot\images\2 6 .png" />
+    <None Include="wwwroot\images\Завтраки .png" />
+    <None Include="wwwroot\images\Мясные блюда .png" />
+    <None Include="wwwroot\images\Рыбные блюда .png" />
+    <None Include="wwwroot\images\Десерты .png" />
+    <None Include="wwwroot\images\Салаты .png" />
+    <None Include="wwwroot\images\Напитки .png" />
     <None Include="wwwroot\images\favicon.ico" />
   </ItemGroup>
 

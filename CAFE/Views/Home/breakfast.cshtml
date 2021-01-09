@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="../js/script.js"></script>
     <style>
         .ellipse1 {
             position: absolute;
@@ -64,6 +65,7 @@
             line-height: 29px;
             color: #000000;
         }
+
         .name_br {
             position: absolute;
             left: 45%;
@@ -176,13 +178,16 @@
             top: 5%;
             bottom: 90%;
         }
+
         .flex-container {
             display: flex;
             flex-wrap: wrap;
         }
+
         a {
-            text-decoration:none;
+            text-decoration: none;
         }
+
         .item {
             background: #FBF7ED;
             margin-top: 100px;
@@ -192,6 +197,7 @@
             border-radius: 14px;
             height: 195px;
         }
+
         .item-header {
             left: 200px;
             bottom: 190px;
@@ -200,7 +206,8 @@
             font-weight: bold;
             width: 250px;
         }
-        .item-text {
+
+        .item-title {
             left: 200px;
             bottom: 190px;
             position: relative;
@@ -208,6 +215,7 @@
             width: 250px;
             font-weight: bold;
         }
+
         .item-desc {
             left: 200px;
             bottom: 170px;
@@ -216,6 +224,7 @@
             width: 300px;
             height: 115px;
         }
+
         .item-price {
             left: 220px;
             width: 200px;
@@ -223,13 +232,15 @@
             position: relative;
             font-family: Montserrat;
         }
+
         .rubl {
             left: 200px;
             bottom: 208px;
             position: relative;
             width: 20px;
         }
-        .change {
+
+        .add_item {
             border: 1px solid #FF6D03;
             border-radius: 10px;
             position: relative;
@@ -238,9 +249,11 @@
             left: 280px;
             bottom: 170px;
         }
-        .ddd{
-            text-align:center;
+
+        .ddd {
+            text-align: center;
         }
+
         .Weight {
             left: 200px;
             bottom: 200px;
@@ -264,17 +277,15 @@
         {
             @if (mi.mealtimeId == 1)
             {
-                <div class="item">
-                    <img src="../images/@mi.menu_item_name .png">
-                    <div class="item-text">@mi.menu_item_name</div>
-                    <div class="item-desc">@mi.desc</div>
-                    <div class="item-price">@mi.menu_item_price</div>
-                    <div class="rubl"><img src="../images/r.png" /></div>
-                    <div class="Weight">@mi.weight гр</div>
-                    <div class="change">
-                        <a href=""><p>Добавить в корзину</p></a>
-                    </div>
-                </div>
+        <div class="item">
+            <img src="../images/@mi.menu_item_name .png">
+            <div class="item-title">@mi.menu_item_name</div>
+            <div class="item-desc">@mi.desc</div>
+            <div class="item-price">@mi.menu_item_price</div>
+            <div class="rubl"><img src="../images/r.png" /></div>
+            <div class="Weight">@mi.weight гр</div>
+            <button class="add_item" data-id="@mi.menu_itemId">Добавить в корзину</button>
+        </div>
             }
         }
     </div>

@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="../js/script.js"></script>
     <style>
         .ellipse1 {
             position: absolute;
@@ -206,7 +207,7 @@
             width: 250px;
         }
 
-        .item-text {
+        .item-title {
             left: 200px;
             bottom: 190px;
             position: relative;
@@ -239,7 +240,7 @@
             width: 20px;
         }
 
-        .change {
+        .add_item {
             border: 1px solid #FF6D03;
             border-radius: 10px;
             position: relative;
@@ -267,26 +268,24 @@
     <img src="../images/ellipse2.png" class="ellipse2">
     <a href="/"><div class="navigation">Главная</div></a>
     <a href="/menu"><div class="menu">> Меню</div></a>
-    <a href="/menu/Напитки"><div class="breakfast">> Напитки</div></a>
+    <a href="/menu/Завтраки"><div class="breakfast">> Завтраки</div></a>
     <div class="basket">
-        <img src="~/images/ko.png">
+        <img src="/images/ko.png">
     </div>
     <div class="flex-container">
         @foreach (var mi in ViewBag.menu_items)
         {
-            @if (mi.mealtimeId == 6)
+            @if (mi.mealtimeId == 1)
             {
-        <div class="item">
-            <img src="../images/@mi.menu_item_name .png">
-            <div class="item-text">@mi.menu_item_name</div>
-            <div class="item-desc">@mi.desc</div>
-            <div class="item-price">@mi.menu_item_price</div>
-            <div class="rubl"><img src="../images/r.png" /></div>
-            <div class="Weight">@mi.weight мл</div>
-            <div class="change">
-                <a href=""><p>Добавить в корзину</p></a>
-            </div>
-        </div>
+                <div class="item">
+                    <img src="../images/@mi.menu_item_name .png">
+                    <div class="item-title">@mi.menu_item_name</div>
+                    <div class="item-desc">@mi.desc</div>
+                    <div class="item-price">@mi.menu_item_price</div>
+                    <div class="rubl"><img src="../images/r.png" /></div>
+                    <div class="Weight">@mi.weight гр</div>
+                    <button class="add_item" data-id="@mi.menu_itemId">Добавить в корзину</button>
+                </div>
             }
         }
     </div>
