@@ -277,17 +277,18 @@
         {
             @if (mi.mealtimeId == 1)
             {
-        <div class="item">
-            <img src="../images/@mi.menu_item_name .png">
-            <div class="item-title">@mi.menu_item_name</div>
-            <div class="item-desc">@mi.desc</div>
-            <div class="item-price">@mi.menu_item_price</div>
-            <div class="rubl"><img src="../images/r.png" /></div>
-            <div class="Weight">@mi.weight гр</div>
-            <button class="add_item" data-id="@mi.menu_itemId">Добавить в корзину</button>
-        </div>
+                <div class="item">
+                    <img src="../images/@mi.menu_item_name .png">
+                    <div class="item-title">@mi.menu_item_name</div>
+                    <div class="item-desc">@mi.desc</div>
+                    <div class="item-price">@mi.menu_item_price</div>
+                    <div class="rubl"><img src="../images/r.png" /></div>
+                    <div class="Weight">@mi.weight гр</div>
+                    <button class="add_item" data-id="@mi.menu_itemId">Добавить в корзину</button>
+                </div>
             }
         }
     </div>
+    <div id="cart_content"></div>
 </body>
 </html>

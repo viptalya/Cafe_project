@@ -1,11 +1,13 @@
-﻿var itemBox;
+﻿var itemBox, cartCont;
 
 window.onload = function () {
     itemBox = document.querySelectorAll('.item');
+    cartCont = document.getElementById('cart_content');
     for (var i = 0; i < itemBox.length; i++) {
         console.log(i)
         addEvent(itemBox[i].querySelector('.add_item'), 'click', addToCart);
     }
+    openCart();
 };
 
 function addEvent(elem, type, handler) {
@@ -27,7 +29,6 @@ function setCartData(o) {
 }
 
 function addToCart(e) {
-    console.log("norm")
     this.disabled = true; 
     var cartData = getCartData() || {}, 
         parentBox = this.parentNode, 
@@ -41,6 +42,27 @@ function addToCart(e) {
     }
     if (!setCartData(cartData)) { 
         this.disabled = false;
+    }
+    return false;
+}
+
+
+function openCart() {
+    var cartData = getCartData(),
+        totalItems = '';
+    if (cartData !== null) {
+        totalItems = '<table class="shopping_list"><tr><th>Наименование</th><th>Цена</th><th>Кол-во</th></tr>';
+        for (var items in cartData) {
+            totalItems += '<tr>';
+            for (var i = 0; i < cartData[items].length; i++) {
+                totalItems += '<td>' + cartData[items][i] + '</td>';
+            }
+            totalItems += '</tr>';
+        }
+        totalItems += '</table>';
+        cartCont.innerHTML = totalItems;
+    } else {
+        cartCont.innerHTML = 'В корзине пусто!';
     }
     return false;
 }
