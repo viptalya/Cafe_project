@@ -13,7 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CAFE.Data;
 using CAFE.Models;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace CAFE
 {
@@ -36,6 +36,12 @@ namespace CAFE
                 .AddEntityFrameworkStores<cafecontext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options => //CookieAuthenticationOptions
+                {
+            options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Addcourier");
+    });
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,5 +1,5 @@
-﻿@{ ViewBag.Title = "Addcourier";
-                Layout = null; }
+﻿@model CAFE.Models.courier
+@{ Layout = null; }
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <style>
@@ -27,7 +27,7 @@
     }
 
     .add {
-        width: 511px;
+        width: 497px;
         position: absolute;
         top: 50px;
         right: 50px;
@@ -37,7 +37,7 @@
     }
 
     .add1 {
-        width: 511px;
+        width: 497px;
         position: absolute;
         top: 130px;
         right: 50px;
@@ -47,7 +47,7 @@
     }
 
     .add2 {
-        width: 511px;
+        width: 497px;
         position: absolute;
         top: 210px;
         right: 50px;
@@ -57,7 +57,7 @@
     }
 
     .add3 {
-        width: 511px;
+        width: 497px;
         position: absolute;
         top: 290px;
         right: 50px;
@@ -67,7 +67,7 @@
     }
 
     .add4 {
-        width: 511px;
+        width: 497px;
         position: absolute;
         top: 370px;
         right: 50px;
@@ -77,7 +77,7 @@
     }
 
     .add5 {
-        width: 511px;
+        width: 497px;
         position: absolute;
         top: 450px;
         right: 50px;
@@ -87,7 +87,7 @@
     }
 
     .add6 {
-        width: 511px;
+        width: 497px;
         position: absolute;
         top: 530px;
         right: 50px;
@@ -148,37 +148,53 @@
     .zzzz {
         position: absolute;
         height: 30px;
-        left: 40.69%;
-        right: 40.62%;
+        left: 50px;
         bottom: 20px;
         background: #FF6D03;
         border: 6px solid #FF6D03;
         border-radius: 6px;
+        font-family: Montserrat;
+    }
+    .zz {
+        position: absolute;
+        height: 30px;
+        right: 50px;
+        bottom: 20px;
+        background: #FF6D03;
+        border: 6px solid #FF6D03;
+        border-radius: 6px;
+        text-align: center;
+        width: 150px;
+        font-family: Montserrat;
     }
 </style>
 <img src="/images/ellipse1.png" class="ellipse1" />
 <img src="/images/ellipse2.png" class="ellipse2" />
 <div class="Rectangle">
-    <form method="post" action="">
-        <input type="hidden" value="@ViewBag.couriers" />
-        <table>
-            <tr>
-                <td class="Sname"><p>Фамилия</p></td>
-                <td><input type="text" name="c_Sname" class="add" /></td>
-                <td class="Name"><p>Имя</p></td>
-                <td><input type="text" name="c_Name" class="add1" /></td>
-                <td class="Pname"><p>Отчество</p></td>
-                <td><input type="text" name="c_Pname" class="add2" /></td>
-                <td class="Number"><p>Номер телефона</p></td>
-                <td><input type="text" name="cus_number" class="add3" /></td>
-                <td class="Email"><p>Почта</p></td>
-                <td><input type="text" name="cus_email" class="add4" /></td>
-                <td class="Login"><p>Логин</p></td>
-                <td><input type="text" name="c_login" class="add5" /></td>
-                <td class="Password"><p>Пароль</p></td>
-                <td><input type="text" name="c_password" class="add6" /></td>
-            </tr>
-            <tr><td><input type="submit" value="Зарегистрироваться" class="zzzz" /> </td><td></td></tr>
-        </table>
+    <form asp-action="Addcourier" asp-controller="Home" asp-anti-forgery="true">
+        <div asp-validation-summary="ModelOnly"></div>
+        <label asp-for="c_Sname" class="Sname">Фамилия</label>
+        <input required="" class="add" type="text" asp-for="c_Sname" />
+        <span asp-validation-for="c_Sname" />
+        <label class="Name" asp-for="c_name">Имя</label>
+        <input required="" class="add1" type="text" asp-for="c_name" />
+        <span asp-validation-for="c_name" />
+        <label class="Pname" asp-for="c_Pname">Отчество</label>
+        <input required="" class="add2" type="text" asp-for="c_Pname" />
+        <span asp-validation-for="c_Pname" />
+        <label class="Number" asp-for="c_phone">Номер телефона</label>
+        <input required="" class="add3" type="text" asp-for="c_phone" />
+        <span asp-validation-for="c_phone" />
+        <label class="Email" asp-for="c_email">Почта</label>
+        <input required="" class="add4" type="text" asp-for="c_email" />
+        <span asp-validation-for="c_email" />
+        <label class="Login" asp-for="c_login">Логин</label>
+        <input required="" class="add5" type="text" asp-for="c_login" />
+        <span asp-validation-for="c_login" />
+        <label class="Password" asp-for="c_password">Пароль</label>
+        <input required="" class="add6" asp-for="c_password" />
+        <span asp-validation-for="c_password" />
+        <input type="submit" value="Зарегистрироваться" class="zzzz"/>
     </form>
+    <form action="/Logincourier"><button class="zz">Войти</button></form>
 </div>

@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Orders Page";
+    Layout = null;
+}
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+@if (User.Identity.IsAuthenticated)
+{
+    <p>@User.Identity.Name</p>
+    <p>ЗАКАЗЫ</p>
+    <form method="post" asp-controller="Home" asp-action="Logout">
+        <input type="submit" value="Выход" />
+    </form>
+}
+else
+{
+    <a asp-controller="Home" asp-action="Logincourier">Вход</a>
+    <a asp-controller="Home" asp-action="Addcourier">Регистрация</a>
+}

@@ -8,6 +8,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CAFE.Controllers
 {
@@ -105,6 +110,36 @@ namespace CAFE.Controllers
             ViewBag.menu_items = Menu_items;
             return View();
         }
+        [Route("/orders")]
+        public IActionResult orders()
+        {
+            return View();
+        }
+        [Route("/Logincourier")]
+        [HttpGet]
+        public IActionResult Logincourier()
+        {
+            return View();
+        }
+        [Route("/Logincourier")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logincourier(courier model)
+        {
+            if (ModelState.IsValid)
+            {
+                courier courier = await db.Couriers.FirstOrDefaultAsync(u => u.c_login == model.c_login && u.c_password == model.c_password);
+                if (courier != null)
+                {
+                    await Authenticate(model.c_login); // аутентификация
+
+                    return RedirectToAction("orders", "Home");
+                }
+                else 
+                ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+            }
+            return View(model);
+        }
         [Route("/Addcourier")]
         [HttpGet]
         public IActionResult Addcourier()
@@ -113,12 +148,56 @@ namespace CAFE.Controllers
         }
         [Route("/Addcourier")]
         [HttpPost]
-        public IActionResult Addcourier(string c_Sname, string c_name, string c_Pname, string c_phone, string c_email, string c_login, string c_password)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Addcourier(courier model)
         {
-            db.Couriers.Add(new courier { c_Sname = c_Sname, c_name = c_name, c_Pname = c_Pname, c_phone = c_phone, c_email = c_email, c_login = c_login, c_password = c_password });
-            db.SaveChanges();
-            return RedirectPermanent("/");
+            if (ModelState.IsValid)
+            {
+                courier courier = await db.Couriers.FirstOrDefaultAsync(u => u.c_login == model.c_login);
+                if (courier == null)
+                {
+                    // добавляем пользователя в бд
+                    db.Couriers.Add(new courier
+                    {
+                        c_Sname = model.c_Sname,
+                        c_name = model.c_name,
+                        c_Pname = model.c_Pname,
+                        c_phone = model.c_phone,
+                        c_email = model.c_email,
+                        c_login = model.c_login,
+                        c_password = model.c_password
+                    });
+                    await db.SaveChangesAsync();
+
+                    await Authenticate(model.c_login); // аутентификация
+
+                    return RedirectToAction("orders", "Home");
+                }
+                else
+                    ModelState.AddModelError("","Ошибка");
+            }
+            return View(model);
         }
 
+        private async Task Authenticate(string userName)
+        {
+            // создаем один claim
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+            };
+            // создаем объект ClaimsIdentity
+            ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            // установка аутентификационных куки
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
+        }
+        [Route("/orders")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("home", "Home");
+        }
     }
 }
