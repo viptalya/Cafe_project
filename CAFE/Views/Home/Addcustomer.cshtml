@@ -1,7 +1,8 @@
 ﻿@{ ViewBag.Title = "Addcustomer";
-                Layout = null; }
+    Layout = null; }
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<script src="../js/script2.js"></script>
 <style>
     .Rectangle {
         position: absolute;
@@ -54,6 +55,14 @@
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
+    }
+
+    .minus_item {
+        cursor: pointer
+    }
+
+    .plus_item {
+        cursor: pointer
     }
 
     .add3 {
@@ -192,6 +201,7 @@
 </style>
 <img src="/images/ellipse1.png" class="ellipse1" />
 <img src="/images/ellipse2.png" class="ellipse2" />
+<div id="cart_content"></div>
 <div class="Rectangle">
     <form method="post" action="">
         <input type="hidden" value="@ViewBag.customers" />

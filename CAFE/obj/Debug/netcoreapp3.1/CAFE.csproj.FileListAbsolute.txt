@@ -403,3 +403,5 @@ C:\Users\пк\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home
 C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\Addcourier.cshtml.g.cs
 C:\Users\пк\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\orders.cshtml.g.cs
 C:\Users\пк\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\Logincourier.cshtml.g.cs
+C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\Logincourier.cshtml.g.cs
+C:\Users\dimon\Desktop\Cafe_project\CAFE\obj\Debug\netcoreapp3.1\Razor\Views\Home\orders.cshtml.g.cs
