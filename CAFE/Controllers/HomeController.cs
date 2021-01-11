@@ -39,7 +39,9 @@ namespace CAFE.Controllers
         public IActionResult Breakfast()
         {
             IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            IEnumerable<ingredient> Ingredients = db.Ingredients;
             ViewBag.menu_items = Menu_items;
+            ViewBag.ingredients = Ingredients;
             return View();
         }
         [Route("/addcustomer")]

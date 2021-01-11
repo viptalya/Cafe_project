@@ -4,21 +4,74 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <script src="../js/script2.js"></script>
 <style>
+    .item-title {
+        font-family: Montserrat;
+    }
+    .item-price {
+        font-family: Montserrat;
+    }
+    .shopping_list {
+        width: 100%;
+        margin-top: 10px;
+        border-collapse: collapse;
+    }
+    .cena {
+        font-family: Montserrat;
+        width: 150px;
+    }
+    .sss {
+        font-family: Montserrat;
+        width: 150px;
+    }
+    .ss {
+        font-family: Montserrat;
+        text-align: center;
+    }
+    .minus_item {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 30%;
+        background-color: #FF6D03;
+        text-align: center;
+        line-height: 30px;
+        color: black;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    .plus_item {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 30%;
+        background-color: #FF6D03;
+        text-align: center;
+        line-height: 30px;
+        color: black;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+    .minus_item {
+        cursor: pointer
+    }
+
+    .plus_item {
+        cursor: pointer
+    }
     .Rectangle {
         position: absolute;
         width: 600px;
-        height: 650px;
+        height: 1150px;
         left: 420px;
         top: 50px;
         background: #FFFFFF;
         border: 2px solid #E5E5E5;
         box-sizing: border-box;
     }
-
     .ellipse1 {
         position: absolute;
         left: 0px;
-        top: 572px;
+        top: 1100px;
     }
 
     .ellipse2 {
@@ -30,7 +83,7 @@
     .add {
         width: 511px;
         position: absolute;
-        top: 50px;
+        top: 540px;
         right: 50px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
@@ -40,7 +93,7 @@
     .add1 {
         width: 511px;
         position: absolute;
-        top: 130px;
+        top: 620px;
         right: 50px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
@@ -50,25 +103,16 @@
     .add2 {
         width: 511px;
         position: absolute;
-        top: 210px;
+        top: 700px;
         right: 50px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
     }
-
-    .minus_item {
-        cursor: pointer
-    }
-
-    .plus_item {
-        cursor: pointer
-    }
-
     .add3 {
         width: 511px;
         position: absolute;
-        top: 290px;
+        top: 780px;
         right: 50px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
@@ -78,7 +122,7 @@
     .add4 {
         width: 511px;
         position: absolute;
-        top: 370px;
+        top: 860px;
         right: 50px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
@@ -88,7 +132,7 @@
     .add5 {
         width: 511px;
         position: absolute;
-        top: 450px;
+        top: 940px;
         right: 50px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
@@ -98,7 +142,7 @@
     .add6 {
         width: 120px;
         position: absolute;
-        top: 530px;
+        top: 1020px;
         right: 440px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
@@ -108,7 +152,7 @@
     .add7 {
         width: 120px;
         position: absolute;
-        top: 530px;
+        top: 1020px;
         right: 245px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
@@ -118,7 +162,7 @@
     .add8 {
         width: 120px;
         position: absolute;
-        top: 530px;
+        top: 1020px;
         right: 50px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
@@ -128,66 +172,69 @@
     .Sname {
         position: absolute;
         left: 50px;
-        top: 10px;
+        top: 500px;
         font-family: Montserrat;
     }
 
     .Name {
         position: absolute;
         left: 50px;
-        top: 90px;
+        top: 580px;
         font-family: Montserrat;
     }
 
     .Pname {
         position: absolute;
         left: 50px;
-        top: 170px;
+        top: 660px;
         font-family: Montserrat;
     }
 
     .Number {
         position: absolute;
         left: 50px;
-        top: 250px;
+        top: 740px;
         font-family: Montserrat;
     }
 
     .Email {
         position: absolute;
         left: 50px;
-        top: 330px;
+        top: 820px;
         font-family: Montserrat;
     }
 
     .Street {
         position: absolute;
         left: 50px;
-        top: 410px;
+        top: 900px;
         font-family: Montserrat;
     }
 
     .House {
         position: absolute;
         left: 50px;
-        top: 490px;
+        top: 980px;
         font-family: Montserrat;
     }
 
     .Entrance {
         position: absolute;
         left: 245px;
-        top: 490px;
+        top: 980px;
         font-family: Montserrat;
     }
 
     .Apartment {
         position: absolute;
         left: 440px;
-        top: 490px;
+        top: 980px;
         font-family: Montserrat;
     }
-
+    .namesss {
+        font-family: Montserrat;
+        width: 300px;
+    }
     .zzzz {
         position: absolute;
         height: 30px;
@@ -198,11 +245,35 @@
         border: 6px solid #FF6D03;
         border-radius: 6px;
     }
+    .test {
+        font-family: Montserrat;
+    }
+    .f {
+        font-family: Montserrat;
+        text-align: center;
+    }
+    .ff {
+        text-align: center;
+    }
+    .navigation {
+        position: absolute;
+        width: 205px;
+        height: 29px;
+        left: 21px;
+        top: 10px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+    }
 </style>
 <img src="/images/ellipse1.png" class="ellipse1" />
 <img src="/images/ellipse2.png" class="ellipse2" />
-<div id="cart_content"></div>
+<a href="/"><div class="navigation">Главная</div></a>
 <div class="Rectangle">
+    <div id="cart_content"></div>
     <form method="post" action="">
         <input type="hidden" value="@ViewBag.customers" />
         <table>

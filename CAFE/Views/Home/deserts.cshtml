@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script src="../js/script.js"></script>
+    <script src="../js/script2.js"></script>
     <style>
         .ellipse1 {
             position: absolute;
@@ -268,14 +268,14 @@
     <img src="../images/ellipse2.png" class="ellipse2">
     <a href="/"><div class="navigation">Главная</div></a>
     <a href="/menu"><div class="menu">> Меню</div></a>
-    <a href="/menu/Завтраки"><div class="breakfast">> Завтраки</div></a>
+    <a href="/menu/Десерты"><div class="breakfast">> Десерты</div></a>
     <div class="basket">
-        <img src="/images/ko.png">
+        <a href="/Addcustomer"><img src="/images/ko.png"></a>
     </div>
     <div class="flex-container">
         @foreach (var mi in ViewBag.menu_items)
         {
-            @if (mi.mealtimeId == 1)
+            @if (mi.mealtimeId == 4)
             {
                 <div class="item">
                     <img src="../images/@mi.menu_item_name .png">

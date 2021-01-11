@@ -53,15 +53,15 @@ function openCart() {
     var totalCount = 0,
         totalSum = 0;
     if (cartData !== null) {
-        totalItems = '<table class="shopping_list"><tr><th>Имя</th><th class="sss cena">Цена</th><th class="sss">Кол-во</th></tr>';
+        totalItems = '<table class="shopping_list"><tr><th class="namesss">Имя</th><th class="cena">Цена</th><th class="sss">Кол-во</th></tr>';
         for (var items in cartData) {
             totalItems += '<tr>';
             console.log(cartData[items]);
             for (var i = 0; i < cartData[items].length; i++) {
                 if (i === 2)
-                    totalItems += '<td><span class="minus_item" my_catalog_data-id="' + items + '" onclick="dob(this, ' + items + ')"><strong>-</strong></span><span id="' + items + '">' + cartData[items][i] + '</span><span class="plus_item" my_catalog_data-id="' + items + '" onclick="dob(this, ' + items + ')"><strong>+</strong></span></td>';
+                    totalItems += '<td class="ff"><span class="minus_item" my_catalog_data-id="' + items + '" onclick="dob(this, ' + items + ')"><strong>-</strong></span><span class="test" id="' + items + '">' + cartData[items][i] + '</span><span class="plus_item" my_catalog_data-id="' + items + '" onclick="dob(this, ' + items + ')"><strong>+</strong></span></td>';
                 else {
-                    totalItems += '<td>' + cartData[items][i] + '</td>'
+                    totalItems += '<td class="f">' + cartData[items][i] + '</td>'
                 }
             }
             totalSum += cartData[items][1] * cartData[items][2];
@@ -69,7 +69,7 @@ function openCart() {
             totalItems += '</td>';
             totalItems += '</tr>';
         }
-        totalItems += '<tr><td class="sss"><strong>Итого</strong></td><td class="sss"><strong><span id="total_sum"><span id="summ">' + totalSum + '</span></span> &#8381</strong></td><td class="sss"><strong><span id="total_count"><span id="ht">' + totalCount + '</span></span> шт.</strong></td></tr>';
+        totalItems += '<tr><td class="ss"><strong>Итого</strong></td><td class="ss"><strong><span id="total_sum"><span id="summ">' + totalSum + '</span></span> &#8381</strong></td><td class="ss"><strong><span id="total_count"><span id="ht">' + totalCount + '</span></span> шт.</strong></td></tr>';
         totalItems += '<table>';
         cart.innerHTML = totalItems;
     } else {
