@@ -38,7 +38,12 @@ function addToCart(e) {
     if (cartData.hasOwnProperty(itemId)) {
         cartData[itemId][2] += 1;
     } else {
-        cartData[itemId] = [itemTitle, itemPrice, 1];
+        let i = {
+            name: itemTitle,
+            price: itemPrice,
+            quantity: 1
+        };
+        cartData[itemId] = i;
     }
     if (!setCartData(cartData)) { 
         this.disabled = false;
@@ -59,7 +64,7 @@ function openCart() {
             console.log(cartData[items]);
             for (var i = 0; i < cartData[items].length; i++) {
                 if (i === 2)
-                    totalItems += '<td class="ff"><span class="minus_item" my_catalog_data-id="' + items + '" onclick="dob(this, ' + items + ')"><strong>-</strong></span><span class="test" id="' + items + '">' + cartData[items][i] + '</span><span class="plus_item" my_catalog_data-id="' + items + '" onclick="dob(this, ' + items + ')"><strong>+</strong></span></td>';
+                    totalItems += '<td class="ff"><span class="minus_item" my_catalog_data-id="' + items + '" onclick="dob(this, ' + items + ')"><strong>-</strong></span><span class="test" id="' + items + '">' + cartData[items].quantity + '</span><span class="plus_item" my_catalog_data-id="' + items + '" onclick="dob(this, ' + items + ')"><strong>+</strong></span></td>';
                 else {
                     totalItems += '<td class="f">' + cartData[items][i] + '</td>'
                 }
@@ -77,6 +82,7 @@ function openCart() {
     }
     return false;
 }
+
 
 function dob(e, itemId) {
     let obj = JSON.parse(localStorage.getItem('cart'));
@@ -115,3 +121,18 @@ function dob(e, itemId) {
         }
     }
 }
+function sendData() {
+    let cart = document.getElementById('clear_cart')
+    let cartData = getCartData();
+    var pust = document.getElementById('pust');
+    if (cartData === null) {
+        pust.addEventListener('click', function (event) {
+            event.preventDefault();
+            alert('Корзина пуста');
+        });
+    }
+    else {
+
+        console.log(cartData)
+    }
+};

@@ -1,0 +1,99 @@
+﻿@model CAFE.Models.admin
+@{
+    Layout = null;
+}
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<style>
+    .ellipse1 {
+        position: absolute;
+        left: 0px;
+        top: 572px;
+    }
+
+    .ellipse2 {
+        position: absolute;
+        right: 0%;
+        top: 0%;
+    }
+
+    .Rectangle {
+        position: absolute;
+        width: 400px;
+        height: 350px;
+        left: 525px;
+        top: 200px;
+        background: #FFFFFF;
+        border: 2px solid #E5E5E5;
+        box-sizing: border-box;
+    }
+
+    .c {
+        font-family: Montserrat;
+        text-align: center;
+    }
+
+    .Login {
+        position: absolute;
+        left: 50px;
+        top: 90px;
+        font-family: Montserrat;
+    }
+
+    .Password {
+        position: absolute;
+        left: 50px;
+        top: 170px;
+        font-family: Montserrat;
+    }
+
+    .add1 {
+        width: 300px;
+        position: absolute;
+        top: 130px;
+        right: 50px;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+    }
+
+    .add2 {
+        width: 300px;
+        position: absolute;
+        top: 210px;
+        right: 50px;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+    }
+
+    .zz {
+        position: absolute;
+        height: 30px;
+        right: 120px;
+        bottom: 20px;
+        background: #FF6D03;
+        border: 6px solid #FF6D03;
+        border-radius: 6px;
+        text-align: center;
+        width: 150px;
+        font-family: Montserrat;
+    }
+</style>
+<img src="/images/ellipse1.png" class="ellipse1" />
+<img src="/images/ellipse2.png" class="ellipse2" />
+<div class="Rectangle">
+    <p class="c">Вход за админа</p>
+    <form asp-action="Alogin" asp-controller="Home" asp-anti-forgery="true">
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <label class="Login" asp-for="login">Введите login</label>
+        <input class="add1" required="" type="text" asp-for="login" />
+        <span asp-validation-for="login" />
+        <label class="Password" asp-for="password">Введите пароль</label>
+        <input class="add2" required="" asp-for="password" />
+        <span asp-validation-for="password" />
+        <div class="form-group">
+            <input class="zz" type="submit" value="Войти" />
+        </div>
+    </form>
+</div>

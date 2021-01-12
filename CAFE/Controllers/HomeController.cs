@@ -13,6 +13,8 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace CAFE.Controllers
 {
@@ -54,7 +56,7 @@ namespace CAFE.Controllers
         [HttpPost]
         public IActionResult Addcustomer(string cus_Sname, string cus_Name, string cus_Pname, string cus_number, string cus_email, string cus_street, string cus_house, string cus_entrance, string cus_apartment)
         {
-            db.Customers.Add(new customer { cus_Sname = cus_Sname, cus_Name = cus_Name, cus_Pname = cus_Pname, cus_number = cus_number, cus_email = cus_email, cus_street = cus_street, cus_house = cus_house, cus_entrance = cus_entrance, cus_apartment = cus_apartment});
+            db.Customers.Add(new customer { cus_Sname = cus_Sname, cus_Name = cus_Name, cus_Pname = cus_Pname, cus_number = cus_number, cus_email = cus_email, cus_street = cus_street, cus_house = cus_house, cus_entrance = cus_entrance, cus_apartment = cus_apartment });
             db.SaveChanges();
             return RedirectPermanent("/");
         }
@@ -137,8 +139,8 @@ namespace CAFE.Controllers
 
                     return RedirectToAction("orders", "Home");
                 }
-                else 
-                ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+                else
+                    ModelState.AddModelError("", "Некорректные логин и(или) пароль");
             }
             return View(model);
         }
@@ -176,7 +178,7 @@ namespace CAFE.Controllers
                     return RedirectToAction("orders", "Home");
                 }
                 else
-                    ModelState.AddModelError("","Ошибка");
+                    ModelState.AddModelError("", "Ошибка");
             }
             return View(model);
         }
@@ -200,6 +202,52 @@ namespace CAFE.Controllers
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("home", "Home");
+        }
+        [Route("/Alogin")]
+        [HttpGet]
+        public IActionResult Alogin()
+        {
+            return View();
+        }
+        [Route("/Alogin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Alogin(admin model)
+        {
+            if (ModelState.IsValid)
+            {
+                admin admin = await db.Admins.FirstOrDefaultAsync(u => u.login == model.login && u.password == model.password);
+                if (admin != null)
+                {
+                    await Authenticate(model.login); // аутентификация
+
+                    return RedirectToAction("Admin", "Home");
+                }
+                else
+                    ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+            }
+            return View(model);
+        }
+        [Route("/Admin")]
+        public IActionResult Admin()
+        {
+            Console.Write("test");
+            return View();
+        }
+        [Route("/cart")]
+        [HttpPost]
+        public ActionResult Cart()
+        {
+            var bodyStr = "";
+            var req = Request;
+            using (StreamReader reader
+                  = new StreamReader(req.Body, Encoding.UTF8, true, 1024, true))
+            {
+                bodyStr = reader.ReadToEndAsync().Result;
+            }
+            dynamic json = JsonConvert.DeserializeObject(bodyStr);
+            Console.Write(json);
+            return RedirectToAction("orders", "Home");
         }
     }
 }

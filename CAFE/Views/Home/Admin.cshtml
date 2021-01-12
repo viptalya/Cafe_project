@@ -1,0 +1,21 @@
+﻿@model CAFE.Models.admin
+@{
+    Layout = null;
+}
+@if (User.Identity.IsAuthenticated)
+{
+    @if (User.Identity.Name != "admin")
+    {
+        <a asp-controller="Home" asp-action="Alogin">Вход</a>
+    }
+    else { 
+    <p>@User.Identity.Name</p>
+    <p>ТУТ ЧАСТЬ АДМИНА</p>
+    <form method="post" asp-controller="Home" asp-action="Logout">
+        <input type="submit" value="Выход" />
+    </form>}
+}
+else
+{
+    <a asp-controller="Home" asp-action="Alogin">Вход</a>
+}
