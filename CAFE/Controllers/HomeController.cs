@@ -245,8 +245,10 @@ namespace CAFE.Controllers
             {
                 bodyStr = reader.ReadToEndAsync().Result;
             }
-            dynamic json = JsonConvert.DeserializeObject(bodyStr);
-            Console.Write(json);
+            //dynamic json = JsonConvert.DeserializeObject(bodyStr);*/
+            
+            var json = JsonConvert.DeserializeObject<data>(bodyStr);
+            Console.WriteLine(json);
             return RedirectToAction("orders", "Home");
         }
     }

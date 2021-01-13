@@ -125,6 +125,13 @@ function sendData() {
         });
     }
     else {
-        console.log(cartData)
+        let json = JSON.stringify(cartData);
+        console.log(json);
+        let request = new XMLHttpRequest();
+        request.open("POST", "/cart", true);
+        request.setRequestHeader("Content-Type", "application/json");
+        request.send(json);
+        localStorage.removeItem('cart');
+        cart.innerHTML = 'Корзина очищена.'
     }
 };
