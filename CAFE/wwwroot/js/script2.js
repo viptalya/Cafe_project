@@ -4,7 +4,6 @@ window.onload = function () {
     itemBox = document.querySelectorAll('.item');
     cart = document.getElementById('cart_content');
     for (var i = 0; i < itemBox.length; i++) {
-        console.log(i)
         addEvent(itemBox[i].querySelector('.add_item'), 'click', addToCart);
     }
     openCart();
@@ -36,7 +35,7 @@ function addToCart(e) {
         itemTitle = parentBox.querySelector('.item-title').innerHTML,
         itemPrice = parentBox.querySelector('.item-price').innerHTML; 
     if (cartData.hasOwnProperty(itemId)) {
-        cartData[itemId][2] += 1;
+        cartData[itemId].quantity += 1;
     } else {
         let i = {
             name: itemTitle,
@@ -59,27 +58,21 @@ function openCart() {
         totalSum = 0;
     if (cartData !== null) {
         totalItems = '<table class="shopping_list"><tr><th class="namesss">Имя</th><th class="cena">Цена</th><th class="sss">Кол-во</th></tr>';
-        for (var items in cartData) {
+        for (var item in cartData) {
             totalItems += '<tr>';
-            console.log(cartData[items]);
-            for (var i = 0; i < cartData[items].length; i++) {
-                if (i === 2)
-                    totalItems += '<td class="ff"><span class="minus_item" my_catalog_data-id="' + items + '" onclick="dob(this, ' + items + ')"><strong>-</strong></span><span class="test" id="' + items + '">' + cartData[items].quantity + '</span><span class="plus_item" my_catalog_data-id="' + items + '" onclick="dob(this, ' + items + ')"><strong>+</strong></span></td>';
-                else {
-                    totalItems += '<td class="f">' + cartData[items][i] + '</td>'
-                }
-            }
-            totalSum += cartData[items][1] * cartData[items][2];
-            totalCount += cartData[items][2];
-            totalItems += '</td>';
-            totalItems += '</tr>';
+            totalItems += '<td class="f">' + cartData[item].name + '</td><td class="f">' + cartData[item].price + '</td><td class="ff"><span class="minus_item" my_catalog_data-id="' + item.name + '" onclick="dob(this, ' + item + ')"><strong>-</strong></span><span class="test" id="' + item + '">' + cartData[item].quantity + '</span><span class="plus_item" my_catalog_data-id="' + item + '" onclick="dob(this, ' + item + ')"><strong>+</strong></span></td>';
+            totalSum += cartData[item].price * cartData[item].quantity;
+            totalCount += cartData[item].quantity;
         }
+        totalItems += '</td>';
+        totalItems += '</tr>';
         totalItems += '<tr><td class="ss"><strong>Итого</strong></td><td class="ss"><strong><span id="total_sum"><span id="summ">' + totalSum + '</span></span> &#8381</strong></td><td class="ss"><strong><span id="total_count"><span id="ht">' + totalCount + '</span></span> шт.</strong></td></tr>';
         totalItems += '<table>';
         cart.innerHTML = totalItems;
     } else {
         cart.innerHTML = 'В корзине пусто!';
     }
+
     return false;
 }
 
@@ -92,12 +85,12 @@ function dob(e, itemId) {
 
         if (obj.hasOwnProperty(itemId)) {
 
-            obj[itemId][2] += 1;
+            obj[itemId].quantity += 1;
             localStorage.setItem('cart', JSON.stringify(obj));
-            document.getElementById(itemId).innerHTML = obj[itemId][2];
+            document.getElementById(itemId).innerHTML = obj[itemId].quantity;
             for (let key in obj) {
-                price += obj[key][1] * obj[key][2]
-                count += obj[key][2]
+                price += obj[key].price * obj[key].quantity
+                count += obj[key].quantity
             }
             document.getElementById('summ').innerHTML = price
             document.getElementById('ht').innerHTML = count
@@ -106,15 +99,15 @@ function dob(e, itemId) {
     else if (e.className === 'minus_item') {
 
         if (obj.hasOwnProperty(itemId)) {
-            obj[itemId][2] -= 1;
-            if (obj[itemId][2] < 0) {
-                obj[itemId][2] = 0;
+            obj[itemId].quantity -= 1;
+            if (obj[itemId].quantity < 0) {
+                obj[itemId].quantity = 0;
             }
             localStorage.setItem('cart', JSON.stringify(obj));
-            document.getElementById(itemId).innerHTML = obj[itemId][2];
+            document.getElementById(itemId).innerHTML = obj[itemId].quantity;
             for (let key in obj) {
-                price -= obj[key][1] * obj[key][2]
-                count -= obj[key][2]
+                price -= obj[key].price * obj[key].quantity
+                count -= obj[key].quantity
             }
             document.getElementById('ht').innerHTML = Math.abs(count)
             document.getElementById('summ').innerHTML = Math.abs(price)
@@ -132,7 +125,6 @@ function sendData() {
         });
     }
     else {
-
         console.log(cartData)
     }
 };
