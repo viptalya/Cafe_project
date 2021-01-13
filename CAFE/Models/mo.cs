@@ -12,7 +12,7 @@ namespace CAFE.Models
         public virtual order Order { get; set; }
         public int? menu_itemId { get; set; }
         public virtual menu_item Menu_item { get; set; }
-        public string order_items_quantity { get; set; }
+        public int order_items_quantity { get; set; }
 
     }
 }

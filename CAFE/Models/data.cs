@@ -14,12 +14,12 @@ namespace CAFE.Models
     public class Dat
     {
         [JsonProperty("id")]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [JsonProperty("name")]
         public string Name { get; set; }
         [JsonProperty("price")]
-        public string Price { get; set; }
+        public int Price { get; set; }
         [JsonProperty("quantity")]
-        public string Quantity { get; set; }
+        public int Quantity { get; set; }
     }
 }

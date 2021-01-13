@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using System.Text;
 using Newtonsoft.Json;
+using System.Threading;
 
 namespace CAFE.Controllers
 {
@@ -70,9 +71,11 @@ namespace CAFE.Controllers
         [HttpPost]
         public IActionResult Reservation(int table_number, DateTime table_order_time)
         {
-            db.Tables.Add(new table { table_number = table_number, table_order_time = table_order_time });
+            Thread.Sleep(1000);
+            int lastCustomerId = db.Customers.Max(item => item.customerId);
+            db.Tables.Add(new table { table_number = table_number, table_order_time = table_order_time, customerId = lastCustomerId });
             db.SaveChanges();
-            return RedirectPermanent("/Endreservation");
+            return RedirectPermanent("/Addcustomer");
         }
         [Route("/Endreservation")]
         public IActionResult Endreservation()
@@ -246,13 +249,27 @@ namespace CAFE.Controllers
                 bodyStr = reader.ReadToEndAsync().Result;
             }
             var json = JsonConvert.DeserializeObject<Root>(bodyStr);
+            Thread.Sleep(500);
+            if (bodyStr == null)
+            {
+                Reservation();
+                Addcustomer();
+            }
+            else { 
+            var totalPrice = 0;
+            int lastCustomerId = db.Customers.Max(item => item.customerId);
             foreach (var value in json.Dat)
             {
-                Console.WriteLine(value.Id);
-                Console.WriteLine(value.Name);
-                Console.WriteLine(value.Price);
-                Console.WriteLine(value.Quantity);
+                totalPrice += value.Price * value.Quantity;
             }
+            db.Orders.Add(new order { order_time = DateTime.Now, price = totalPrice, customerId = lastCustomerId });
+            db.SaveChanges();
+            int lastOrderId = db.Orders.Max(item => item.orderId);
+            foreach (var value in json.Dat)
+            {
+                db.Mos.Add(new mo { orderId = lastOrderId, menu_itemId = value.Id, order_items_quantity = value.Quantity });
+            }
+            db.SaveChanges();}
             return RedirectToAction("orders", "Home");
         }
     }
