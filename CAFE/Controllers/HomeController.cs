@@ -245,10 +245,14 @@ namespace CAFE.Controllers
             {
                 bodyStr = reader.ReadToEndAsync().Result;
             }
-            //dynamic json = JsonConvert.DeserializeObject(bodyStr);*/
-            
-            var json = JsonConvert.DeserializeObject<data>(bodyStr);
-            Console.WriteLine(json);
+            var json = JsonConvert.DeserializeObject<Root>(bodyStr);
+            foreach (var value in json.Dat)
+            {
+                Console.WriteLine(value.Id);
+                Console.WriteLine(value.Name);
+                Console.WriteLine(value.Price);
+                Console.WriteLine(value.Quantity);
+            }
             return RedirectToAction("orders", "Home");
         }
     }

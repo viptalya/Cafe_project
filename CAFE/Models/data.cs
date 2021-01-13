@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 
 namespace CAFE.Models
 {
-    public class data
+    public class Root
     {
+        [JsonProperty("items")]
+        public Dat[] Dat { get; set; }
+    }
+    public class Dat
+    {
+        [JsonProperty("id")]
+        public string Id { get; set; }
         [JsonProperty("name")]
-        public string name { get; set; }
+        public string Name { get; set; }
         [JsonProperty("price")]
-        public string price { get; set; }
+        public string Price { get; set; }
         [JsonProperty("quantity")]
-        public string quantity { get; set; }
+        public string Quantity { get; set; }
     }
 }

@@ -125,13 +125,26 @@ function sendData() {
         });
     }
     else {
-        let json = JSON.stringify(cartData);
-        console.log(json);
+        let reqBody = {
+            items: []
+        }
+        for (var item in cartData) {
+            let i = {
+                id: item,
+                name: cartData[item].name,
+                price: cartData[item].price,
+                quantity: cartData[item].quantity
+            };
+            reqBody.items.push(i)   
+        }
+        
+        let json = JSON.stringify(reqBody);
+        console.log(json)
         let request = new XMLHttpRequest();
         request.open("POST", "/cart", true);
         request.setRequestHeader("Content-Type", "application/json");
         request.send(json);
-        localStorage.removeItem('cart');
+/*        localStorage.removeItem('cart');*/
         cart.innerHTML = 'Корзина очищена.'
     }
 };
