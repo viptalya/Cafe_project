@@ -69,13 +69,14 @@ namespace CAFE.Controllers
         }
         [Route("/Reservation")]
         [HttpPost]
-        public IActionResult Reservation(int table_number, DateTime table_order_time)
+        public IActionResult Reservation(string cus_Sname, string cus_Name, string cus_Pname, string cus_number, string cus_email, string cus_street, string cus_house, string cus_entrance, string cus_apartment, int table_number, DateTime table_order_time)
         {
-            Thread.Sleep(1000);
+            db.Customers.Add(new customer { cus_Sname = cus_Sname, cus_Name = cus_Name, cus_Pname = cus_Pname, cus_number = cus_number, cus_email = cus_email, cus_street = cus_street, cus_house = cus_house, cus_entrance = cus_entrance, cus_apartment = cus_apartment });
+            db.SaveChanges();
             int lastCustomerId = db.Customers.Max(item => item.customerId);
             db.Tables.Add(new table { table_number = table_number, table_order_time = table_order_time, customerId = lastCustomerId });
             db.SaveChanges();
-            return RedirectPermanent("/Addcustomer");
+            return RedirectPermanent("/endreservation");
         }
         [Route("/Endreservation")]
         public IActionResult Endreservation()
@@ -250,12 +251,6 @@ namespace CAFE.Controllers
             }
             var json = JsonConvert.DeserializeObject<Root>(bodyStr);
             Thread.Sleep(500);
-            if (bodyStr == null)
-            {
-                Reservation();
-                Addcustomer();
-            }
-            else { 
             var totalPrice = 0;
             int lastCustomerId = db.Customers.Max(item => item.customerId);
             foreach (var value in json.Dat)
@@ -269,8 +264,8 @@ namespace CAFE.Controllers
             {
                 db.Mos.Add(new mo { orderId = lastOrderId, menu_itemId = value.Id, order_items_quantity = value.Quantity });
             }
-            db.SaveChanges();}
-            return RedirectToAction("orders", "Home");
+            db.SaveChanges();
+            return RedirectToAction("/");
         }
     }
 }

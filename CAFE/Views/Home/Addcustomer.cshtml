@@ -2,7 +2,7 @@
     Layout = null; }
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-<script src="../js/script7.js"></script>
+<script src="../js/script8.js"></script>
 <style>
     .item-title {
         font-family: Montserrat;
@@ -59,8 +59,8 @@
         cursor: pointer
     }
     .Rectangle {
-        position: absolute;
-        width: 600px;
+        position: relative;
+        width: 585px;
         height: 1150px;
         left: 420px;
         top: 50px;
@@ -81,10 +81,9 @@
     }
 
     .add {
+        position: relative;
         width: 511px;
-        position: absolute;
-        top: 540px;
-        right: 50px;
+        left: 35px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
@@ -92,9 +91,8 @@
 
     .add1 {
         width: 511px;
-        position: absolute;
-        top: 620px;
-        right: 50px;
+        position: relative;
+        left: 35px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
@@ -102,18 +100,16 @@
 
     .add2 {
         width: 511px;
-        position: absolute;
-        top: 700px;
-        right: 50px;
+        position: relative;
+        left: 35px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
     }
     .add3 {
         width: 511px;
-        position: absolute;
-        top: 780px;
-        right: 50px;
+        position: relative;
+        left: 35px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
@@ -121,9 +117,8 @@
 
     .add4 {
         width: 511px;
-        position: absolute;
-        top: 860px;
-        right: 50px;
+        position: relative;
+        left: 35px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
@@ -131,9 +126,8 @@
 
     .add5 {
         width: 511px;
-        position: absolute;
-        top: 940px;
-        right: 50px;
+        position: relative;
+        left: 35px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
@@ -141,9 +135,8 @@
 
     .add6 {
         width: 120px;
-        position: absolute;
-        top: 1020px;
-        right: 440px;
+        position: relative;
+        left: 35px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
@@ -151,9 +144,9 @@
 
     .add7 {
         width: 120px;
-        position: absolute;
-        top: 1020px;
-        right: 245px;
+        position: relative;
+        bottom: 93px;
+        left: 230px;
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
@@ -161,74 +154,82 @@
 
     .add8 {
         width: 120px;
-        position: absolute;
-        top: 1020px;
-        right: 50px;
+        position: relative;
+        left: 425px;
         background: #FFFFFF;
+        bottom: 186px;
         border: 2px solid #FF6D03;
         border-radius: 3px;
     }
 
     .Sname {
-        position: absolute;
+        position: relative;
         left: 50px;
-        top: 500px;
         font-family: Montserrat;
+        padding-top: 20px;
     }
 
     .Name {
-        position: absolute;
-        left: 50px;
-        top: 580px;
+        position: relative;
         font-family: Montserrat;
+        top: 80px;
+        right: 545px;
+        padding-top: 20px;
     }
 
     .Pname {
-        position: absolute;
-        left: 50px;
-        top: 660px;
+        position: relative;
         font-family: Montserrat;
+        padding-top: 20px;
+        top: 160px;
+        right: 1100px;
     }
 
     .Number {
-        position: absolute;
-        left: 50px;
-        top: 740px;
+        position: relative;
         font-family: Montserrat;
+        padding-top: 20px;
+        top: 240px;
+        right: 1695px;
     }
 
     .Email {
-        position: absolute;
-        left: 50px;
-        top: 820px;
+        position: relative;
+        right: 2285px;
+        top: 320px;
         font-family: Montserrat;
+        padding-top: 20px;
     }
 
     .Street {
-        position: absolute;
-        left: 50px;
-        top: 900px;
+        position: relative;
+        right: 2855px;
+        top: 400px;
         font-family: Montserrat;
+        padding-top: 20px;
     }
 
     .House {
-        position: absolute;
-        left: 50px;
-        top: 980px;
+        position: relative;
+        right: 3425px;
+        top: 475px;
+        padding-top: 20px;
         font-family: Montserrat;
     }
 
     .Entrance {
-        position: absolute;
-        left: 245px;
-        top: 980px;
+        position: relative;
+        right: 3392px;
+        top: 475px;
+        padding-top: 20px;
         font-family: Montserrat;
     }
 
     .Apartment {
-        position: absolute;
-        left: 440px;
-        top: 980px;
+        position: relative;
+        right: 3402px;
+        top: 475px;
+        padding-top: 20px;
         font-family: Montserrat;
     }
     .namesss {
@@ -276,28 +277,24 @@
     <div id="cart_content"></div>
     <form method="post" action="">
         <input type="hidden" value="@ViewBag.customers" />
-        <table>
-            <tr>
-                <td class="Sname"><p>Фамилия</p></td>
-                <td><input type="text" required="" name="cus_Sname" class="add" /></td>
-                <td class="Name"><p>Имя</p></td>
-                <td><input type="text" required="" name="cus_Name" class="add1" /></td>
-                <td class="Pname"><p>Отчество</p></td>
-                <td><input type="text" required="" name="cus_Pname" class="add2" /></td>
-                <td class="Number"><p>Номер телефона</p></td>
-                <td><input type="text" required="" name="cus_number" class="add3" /></td>
-                <td class="Email"><p>Почта</p></td>
-                <td><input type="text" required="" name="cus_email" class="add4" /></td>
-                <td class="Street"><p>Улица</p></td>
-                <td><input type="text" required="" name="cus_street" class="add5" /></td>
-                <td class="House"><p>Дом</p></td>
-                <td><input type="text" required="" name="cus_house" class="add6" /></td>
-                <td class="Entrance"><p>Подъезд</p></td>
-                <td><input type="text" required="" name="cus_entrance" class="add7" /></td>
-                <td class="Apartment"><p>Квартира</p></td>
-                <td><input type="text" required="" name="cus_apartment" class="add8" /></td>
-            </tr>
-            <tr><td><div id="pust"><input type="submit" value="Заказать" class="zzzz" onclick="sendData()" /></div> </td><td></td></tr>
-        </table>
+                <p class="Sname">Фамилия</p>
+                <input type="text" required="" name="cus_Sname" class="add" />
+                <p class="Name">Имя</p>
+                <input type="text" required="" name="cus_Name" class="add1" />
+                <p class="Pname">Отчество</p>
+                <input type="text" required="" name="cus_Pname" class="add2" />
+                <p class="Number">Телефон</p>
+                <input type="text" required="" name="cus_number" class="add3" />
+                <p class="Email">Почта</p>
+                <input type="text" required="" name="cus_email" class="add4" />
+                <p class="Street">Улица</p>
+                <input type="text" required="" name="cus_street" class="add5" />
+                <p class="House">Дом</p>
+                <input type="text" required="" name="cus_house" class="add6" />
+                <p class="Entrance">Подъезд</p>
+                <input type="text" required="" name="cus_entrance" class="add7" />
+                <p class="Apartment">Квартира</p>
+                <input type="text" required="" name="cus_apartment" class="add8" />
+            <div id="pust"><input type="submit" value="Заказать" class="zzzz" onclick="sendData()" /></div>
     </form>
 </div>

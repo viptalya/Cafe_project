@@ -118,13 +118,13 @@ function sendData() {
     let cart = document.getElementById('clear_cart')
     let cartData = getCartData();
     var pust = document.getElementById('pust');
-    /*if (cartData === null) {
+    if (cartData === null) {
         pust.addEventListener('click', function (event) {
             event.preventDefault();
             alert('Корзина пуста');
         });
-    }*/
-    //else {
+    }
+    else {
         let reqBody = {
             items: []
         }
