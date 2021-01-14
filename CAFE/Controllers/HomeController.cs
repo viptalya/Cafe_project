@@ -121,6 +121,14 @@ namespace CAFE.Controllers
         [Route("/orders")]
         public IActionResult orders()
         {
+            IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            IEnumerable<order> Orders = db.Orders;
+            IEnumerable<mo> Mos = db.Mos;
+            IEnumerable<customer> customers = db.Customers;
+            ViewBag.menu_items = Menu_items;
+            ViewBag.Customers = customers;
+            ViewBag.Mos = Mos;
+            ViewBag.Orders = Orders;
             return View();
         }
         [Route("/Logincourier")]
@@ -275,6 +283,5 @@ namespace CAFE.Controllers
             db.SaveChanges();
             return RedirectToAction("/");
         }
-
     }
 }

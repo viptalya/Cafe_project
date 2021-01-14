@@ -1,5 +1,5 @@
-﻿@{
-    ViewData["Title"] = "Orders Page";
+﻿@model CAFE.Models.order
+@{
     Layout = null;
 }
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
@@ -8,6 +8,45 @@
 {
     <p>@User.Identity.Name</p>
     <p>ЗАКАЗЫ</p>
+    <table>
+        @foreach (var c in ViewBag.Orders)
+        {
+        <tr>
+            <td><p>@c.orderId</p></td>
+            <td><p>@c.order_time</p></td>
+            <td><p>@c.price</p></td>
+            @foreach (var k in ViewBag.Customers)
+            {
+                    @if (k.customerId == c.customerId)
+                    {
+                        <tr>
+                            <td><p>@k.cus_Sname</p></td>
+                            <td><p>@k.cus_Name</p></td>
+                            <td><p>@k.cus_Pname</p></td>
+                            <td><p>@k.cus_number</p></td>
+                        </tr>
+                    }
+            }
+            @foreach (var x in ViewBag.Mos)
+            {
+                @if (c.orderId == x.orderId)
+                {
+                    <tr>
+                        <td><p>@x.order_items_quantity</p></td>
+                        @foreach (var z in ViewBag.menu_items)
+                        {
+                            @if (x.menu_itemId == z.menu_itemId)
+                            {
+                                <td><p>@z.menu_item_name</p></td>
+                            }
+                        }
+                    </tr>
+                }
+            }
+            <td><p><a href="">Взять заказ</a></p></td>
+        </tr>
+        }
+    </table>
     <form method="post" asp-controller="Home" asp-action="Logout">
         <input type="submit" value="Выход" />
     </form>
