@@ -2,18 +2,60 @@
 @{
     Layout = null;
 }
+<style>
+    .Rectangle {
+        position: relative;
+        width: 585px;
+        left: 420px;
+        top: 50px;
+        background: #FFFFFF;
+        border: 2px solid #E5E5E5;
+        box-sizing: border-box;
+    }
+    .navigation {
+        position: absolute;
+        width: 205px;
+        height: 29px;
+        left: 21px;
+        top: 10px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+    }
+</style>
 @if (User.Identity.IsAuthenticated)
 {
     @if (User.Identity.Name != "admin")
     {
         <a asp-controller="Home" asp-action="Alogin">Вход</a>
     }
-    else { 
-    <p>@User.Identity.Name</p>
-    <p>ТУТ ЧАСТЬ АДМИНА</p>
-    <form method="post" asp-controller="Home" asp-action="Logout">
-        <input type="submit" value="Выход" />
-    </form>}
+    else
+    {
+        <p>ТУТ ЧАСТЬ АДМИНА</p>
+        <a href="/"><div class="navigation">Главная</div></a>
+        <div class="Rectangle">
+            <form method="post">
+                <input type="hidden" value="@ViewBag.menu_items" />
+                <p class="menu_item_price">Цена блюда</p>
+                <input type="text" required="" name="menu_item_price" class="add" />
+                <p class="desc">Описание</p>
+                <input type="text" required="" name="desc" class="add1" />
+                <p class="weight">Объем блюда</p>
+                <input type="text" required="" name="weight" class="add2" />
+                <p class="menu_item_name">Название блюда</p>
+                <input type="text" required="" name="menu_item_name" class="add3" />
+                <p class="mealtimeId">ID типа блюда</p>
+                <input type="text" required="" name="mealtimeId" class="add4" />
+                <input type="submit" value="Добавить" class="zzzz" />
+            </form>
+            <form method="post" asp-controller="Home" asp-action="Logout">
+                <input type="submit" value="Выход" />
+            </form>
+        </div>
+    }
 }
 else
 {

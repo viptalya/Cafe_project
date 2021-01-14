@@ -233,9 +233,17 @@ namespace CAFE.Controllers
             return View(model);
         }
         [Route("/Admin")]
+        [HttpGet]
         public IActionResult Admin()
         {
-            Console.Write("test");
+            return View();
+        }
+        [Route("/Admin")]
+        [HttpPost]
+        public IActionResult Admin(int menu_item_price, string desc, string weight, string menu_item_name, int mealtimeId)
+        {
+            db.Menu_Items.Add(new menu_item { menu_item_price = menu_item_price, desc = desc, weight = weight, menu_item_name = menu_item_name, mealtimeId = mealtimeId});
+            db.SaveChanges();
             return View();
         }
         [Route("/cart")]
@@ -267,5 +275,6 @@ namespace CAFE.Controllers
             db.SaveChanges();
             return RedirectToAction("/");
         }
+
     }
 }
