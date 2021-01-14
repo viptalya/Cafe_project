@@ -4,49 +4,80 @@
 }
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<style>
+    TABLE {
+        border-collapse: collapse;
+    }
+
+    TD, TH {
+        padding: 3px;
+        border: 1px solid black;
+    }
+
+    TH {
+        background: #b0e0e6;
+    }
+    .Norder {
+        width:50px
+    }
+</style>
 @if (User.Identity.IsAuthenticated)
 {
     <p>@User.Identity.Name</p>
     <p>ЗАКАЗЫ</p>
-    <table>
-        @foreach (var c in ViewBag.Orders)
-        {
-        <tr>
-            <td><p>@c.orderId</p></td>
-            <td><p>@c.order_time</p></td>
-            <td><p>@c.price</p></td>
-            @foreach (var k in ViewBag.Customers)
+    <form method="post" asp-controller="Home" asp-action="orders">
+        <table>
+            <tr class="Norder">Номер заказа</tr>
+            @foreach (var c in ViewBag.Orders)
             {
-                    @if (k.customerId == c.customerId)
-                    {
-                        <tr>
-                            <td><p>@k.cus_Sname</p></td>
-                            <td><p>@k.cus_Name</p></td>
-                            <td><p>@k.cus_Pname</p></td>
-                            <td><p>@k.cus_number</p></td>
-                        </tr>
-                    }
-            }
-            @foreach (var x in ViewBag.Mos)
-            {
-                @if (c.orderId == x.orderId)
+                @if (c.courierId == null)
                 {
                     <tr>
-                        <td><p>@x.order_items_quantity</p></td>
-                        @foreach (var z in ViewBag.menu_items)
+                        <td class="Norder"><p>@c.orderId</p></td>
+                        <td><p>@c.order_time</p></td>
+                        <td><p>@c.price</p></td>
+                        @foreach (var k in ViewBag.Customers)
                         {
-                            @if (x.menu_itemId == z.menu_itemId)
+                            @if (k.customerId == c.customerId)
                             {
-                                <td><p>@z.menu_item_name</p></td>
+                                <td><p>@k.cus_Sname</p></td>
+                                <td><p>@k.cus_Name</p></td>
+                                <td><p>@k.cus_Pname</p></td>
+                                <td><p>@k.cus_number</p></td>
+                            }
+                        }
+                        @foreach (var x in ViewBag.Mos)
+                        {
+                            @if (c.orderId == x.orderId)
+                            {
+                                <td><p>@x.order_items_quantity</p></td>
+                                
+                                @foreach (var z in ViewBag.menu_items)
+                                {
+                                    @if (x.menu_itemId == z.menu_itemId)
+                                    {
+                                        <td>@z.menu_item_name</td>
+                                    }
+                                }
                             }
                         }
                     </tr>
                 }
             }
-            <td><p><a href="">Взять заказ</a></p></td>
-        </tr>
-        }
-    </table>
+            <td>
+                <select name="orderId" class="">
+                    @foreach (var h in ViewBag.Orders)
+                    {
+                        @if (h.courierId == null)
+                        {
+                            <option>@h.orderId</option>
+                        }
+                    }
+                </select>
+            </td>
+            <td><input type="submit" value="Взять заказ" /></td>
+        </table>
+    </form>
     <form method="post" asp-controller="Home" asp-action="Logout">
         <input type="submit" value="Выход" />
     </form>

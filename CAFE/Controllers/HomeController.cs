@@ -119,8 +119,11 @@ namespace CAFE.Controllers
             return View();
         }
         [Route("/orders")]
+        [HttpGet]
         public IActionResult orders()
         {
+            IEnumerable<courier> Couriers = db.Couriers;
+            ViewBag.couriers = Couriers;
             IEnumerable<menu_item> Menu_items = db.Menu_Items;
             IEnumerable<order> Orders = db.Orders;
             IEnumerable<mo> Mos = db.Mos;
@@ -129,6 +132,32 @@ namespace CAFE.Controllers
             ViewBag.Customers = customers;
             ViewBag.Mos = Mos;
             ViewBag.Orders = Orders;
+            return View();
+        }
+        [Route("/orders")]
+        [HttpPost]
+        public async Task<IActionResult> orders(order model)
+        {
+            IEnumerable<courier> Couriers = db.Couriers;
+            ViewBag.couriers = Couriers;
+            IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            IEnumerable<order> Orders = db.Orders;
+            IEnumerable<mo> Mos = db.Mos;
+            IEnumerable<customer> customers = db.Customers;
+            ViewBag.menu_items = Menu_items;
+            ViewBag.Customers = customers;
+            ViewBag.Mos = Mos;
+            ViewBag.Orders = Orders;
+            foreach (var value in ViewBag.couriers)
+            {
+                if (value.c_login == User.Identity.Name)
+                {
+                    order order = await db.Orders.FirstOrDefaultAsync(value => value.orderId == model.orderId);
+                    order.courierId = value.courierId;
+                    db.Orders.Update(order);
+                }
+            }
+            await db.SaveChangesAsync();
             return View();
         }
         [Route("/Logincourier")]
@@ -207,7 +236,6 @@ namespace CAFE.Controllers
             // установка аутентификационных куки
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
-        [Route("/orders")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
