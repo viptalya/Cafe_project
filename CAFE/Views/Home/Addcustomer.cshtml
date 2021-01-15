@@ -7,26 +7,32 @@
     .item-title {
         font-family: Montserrat;
     }
+
     .item-price {
         font-family: Montserrat;
     }
+
     .shopping_list {
         width: 100%;
         margin-top: 10px;
         border-collapse: collapse;
     }
+
     .cena {
         font-family: Montserrat;
         width: 150px;
     }
+
     .sss {
         font-family: Montserrat;
         width: 150px;
     }
+
     .ss {
         font-family: Montserrat;
         text-align: center;
     }
+
     .minus_item {
         display: inline-block;
         width: 30px;
@@ -39,6 +45,7 @@
         cursor: pointer;
         margin-right: 5px;
     }
+
     .plus_item {
         display: inline-block;
         width: 30px;
@@ -51,6 +58,7 @@
         cursor: pointer;
         margin-left: 5px;
     }
+
     .minus_item {
         cursor: pointer
     }
@@ -58,6 +66,7 @@
     .plus_item {
         cursor: pointer
     }
+
     .Rectangle {
         position: relative;
         width: 585px;
@@ -67,6 +76,7 @@
         border: 2px solid #E5E5E5;
         box-sizing: border-box;
     }
+
     .ellipse1 {
         position: absolute;
         left: 0px;
@@ -105,6 +115,7 @@
         border: 2px solid #FF6D03;
         border-radius: 3px;
     }
+
     .add3 {
         width: 511px;
         position: relative;
@@ -225,10 +236,12 @@
         left: 440px;
         font-family: Montserrat;
     }
+
     .namesss {
         font-family: Montserrat;
         width: 300px;
     }
+
     .zzzz {
         position: relative;
         height: 30px;
@@ -238,16 +251,20 @@
         border: 6px solid #FF6D03;
         border-radius: 6px;
     }
+
     .test {
         font-family: Montserrat;
     }
+
     .f {
         font-family: Montserrat;
         text-align: center;
     }
+
     .ff {
         text-align: center;
     }
+
     .navigation {
         position: absolute;
         width: 205px;
@@ -267,26 +284,27 @@
 <a href="/"><div class="navigation">Главная</div></a>
 <div class="Rectangle">
     <div id="cart_content"></div>
-    <form method="post" action="">
+    <form method="post" action="" enctype="multipart/form-data">
         <input type="hidden" value="@ViewBag.customers" />
-                <p class="Sname">Фамилия</p>
-                <input type="text" required="" name="cus_Sname" class="add" />
-                <p class="Name">Имя</p>
-                <input type="text" required="" name="cus_Name" class="add1" />
-                <p class="Pname">Отчество</p>
-                <input type="text" required="" name="cus_Pname" class="add2" />
-                <p class="Number">Телефон</p>
-                <input type="text" required="" name="cus_number" class="add3" />
-                <p class="Email">Почта</p>
-                <input type="text" required="" name="cus_email" class="add4" />
-                <p class="Street">Улица</p>
-                <input type="text" required="" name="cus_street" class="add5" />
-                <p class="House">Дом</p>
-                <input type="text" required="" name="cus_house" class="add6" />
-                <p class="Entrance">Подъезд</p>
-                <input type="text" required="" name="cus_entrance" class="add7" />
-                <p class="Apartment">Квартира</p>
-                <input type="text" required="" name="cus_apartment" class="add8" />
-            <div id="pust"><input type="submit" value="Заказать" class="zzzz" onclick="sendData()" /></div>
+        <p class="Sname">Фамилия</p>
+        <input type="text" required="" name="cus_Sname" class="add" />
+        <p class="Name">Имя</p>
+        <input type="text" required="" name="cus_Name" class="add1" />
+        <p class="Pname">Отчество</p>
+        <input type="text" required="" name="cus_Pname" class="add2" />
+        <p class="Number">Телефон</p>
+        <input type="text" required="" name="cus_number" class="add3" />
+        <p class="Email">Почта</p>
+        <input type="text" required="" name="cus_email" class="add4" />
+        <p class="Street">Улица</p>
+        <input type="text" required="" name="cus_street" class="add5" />
+        <p class="House">Дом</p>
+        <input type="text" required="" name="cus_house" class="add6" />
+        <p class="Entrance">Подъезд</p>
+        <input type="text" required="" name="cus_entrance" class="add7" />
+        <p class="Apartment">Квартира</p>
+        <input type="text" required="" name="cus_apartment" class="add8" />
+        <input type="file" name="uploadedFile" />
+        <div id="pust"><input type="submit" value="Заказать" class="zzzz" onclick="sendData()" /></div>
     </form>
 </div>

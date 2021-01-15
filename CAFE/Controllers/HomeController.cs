@@ -16,15 +16,20 @@ using Microsoft.AspNetCore.Authorization;
 using System.Text;
 using Newtonsoft.Json;
 using System.Threading;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
 
 namespace CAFE.Controllers
 {
     public class HomeController : Controller
     {
         cafecontext db;
-        public HomeController(cafecontext context)
+        IWebHostEnvironment _appEnvironment;
+
+        public HomeController(cafecontext context, IWebHostEnvironment appEnvironment)
         {
             db = context;
+            _appEnvironment = appEnvironment;
         }
         [Route("/")]
         public IActionResult Home()
@@ -55,8 +60,19 @@ namespace CAFE.Controllers
         }
         [Route("/addcustomer")]
         [HttpPost]
-        public IActionResult Addcustomer(string cus_Sname, string cus_Name, string cus_Pname, string cus_number, string cus_email, string cus_street, string cus_house, string cus_entrance, string cus_apartment)
+        public async Task<IActionResult> Addcustomer(string cus_Sname, string cus_Name, string cus_Pname, string cus_number, string cus_email, string cus_street, string cus_house, string cus_entrance, string cus_apartment, IFormFile uploadedFile)
         {
+            if (uploadedFile != null)
+            {
+                string path = "/images/" + uploadedFile.FileName;
+                using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
+                {
+                    await uploadedFile.CopyToAsync(fileStream);
+                }
+                FileModel file = new FileModel { Name = uploadedFile.FileName, Path = path };
+                db.Files.Add(file);
+                db.SaveChanges();
+            }
             db.Customers.Add(new customer { cus_Sname = cus_Sname, cus_Name = cus_Name, cus_Pname = cus_Pname, cus_number = cus_number, cus_email = cus_email, cus_street = cus_street, cus_house = cus_house, cus_entrance = cus_entrance, cus_apartment = cus_apartment });
             db.SaveChanges();
             return RedirectPermanent("/");
