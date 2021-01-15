@@ -60,19 +60,8 @@ namespace CAFE.Controllers
         }
         [Route("/addcustomer")]
         [HttpPost]
-        public async Task<IActionResult> Addcustomer(string cus_Sname, string cus_Name, string cus_Pname, string cus_number, string cus_email, string cus_street, string cus_house, string cus_entrance, string cus_apartment, IFormFile uploadedFile)
+        public IActionResult Addcustomer(string cus_Sname, string cus_Name, string cus_Pname, string cus_number, string cus_email, string cus_street, string cus_house, string cus_entrance, string cus_apartment)
         {
-            if (uploadedFile != null)
-            {
-                string path = "/images/" + uploadedFile.FileName;
-                using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
-                {
-                    await uploadedFile.CopyToAsync(fileStream);
-                }
-                FileModel file = new FileModel { Name = uploadedFile.FileName, Path = path };
-                db.Files.Add(file);
-                db.SaveChanges();
-            }
             db.Customers.Add(new customer { cus_Sname = cus_Sname, cus_Name = cus_Name, cus_Pname = cus_Pname, cus_number = cus_number, cus_email = cus_email, cus_street = cus_street, cus_house = cus_house, cus_entrance = cus_entrance, cus_apartment = cus_apartment });
             db.SaveChanges();
             return RedirectPermanent("/");
@@ -288,12 +277,28 @@ namespace CAFE.Controllers
         [HttpGet]
         public IActionResult Admin()
         {
+            IEnumerable<mealtime> Mealtimes = db.Mealtimes;
+            ViewBag.mealtimes = Mealtimes;
+            IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            ViewBag.menu_items = Menu_items;
             return View();
         }
         [Route("/Admin")]
         [HttpPost]
-        public IActionResult Admin(int menu_item_price, string desc, string weight, string menu_item_name, int mealtimeId)
+        public async Task<IActionResult> Admin(int menu_item_price, string desc, string weight, string menu_item_name, int mealtimeId, IFormFile uploadedFile)
         {
+            IEnumerable<mealtime> Mealtimes = db.Mealtimes;
+            ViewBag.mealtimes = Mealtimes;
+            IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            ViewBag.menu_items = Menu_items;
+            if (uploadedFile != null)
+            {
+                string path = "/images/" + uploadedFile.FileName;
+                using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
+                {
+                    await uploadedFile.CopyToAsync(fileStream);
+                }
+            }
             db.Menu_Items.Add(new menu_item { menu_item_price = menu_item_price, desc = desc, weight = weight, menu_item_name = menu_item_name, mealtimeId = mealtimeId});
             db.SaveChanges();
             return View();
@@ -326,6 +331,23 @@ namespace CAFE.Controllers
             }
             db.SaveChanges();
             return RedirectToAction("/");
+        }
+        [Route("/breakfast")]
+        [HttpPost]
+        public async Task<IActionResult> Delete(menu_item model)
+        {
+            IEnumerable<menu_item> Menu_items = db.Menu_Items;
+            ViewBag.menu_items = Menu_items;
+            foreach (var value in ViewBag.menu_items)
+            {
+                if (value.menu_itemId != null)
+                {
+                    menu_item menu_item = await db.Menu_Items.FirstOrDefaultAsync(value => value.menu_itemId == model.menu_itemId);
+                    db.Menu_Items.Remove(menu_item);
+                }
+            }
+            await db.SaveChangesAsync();
+            return RedirectToAction("home", "Home");
         }
     }
 }

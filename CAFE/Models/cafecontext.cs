@@ -18,7 +18,6 @@ namespace CAFE.Models
         public DbSet<admin> Admins { get; set; }
         public DbSet<courier> Couriers { get; set; }
         public DbSet<mo> Mos { get; set; }
-        public DbSet<FileModel> Files { get; set; }
         public cafecontext(DbContextOptions<cafecontext> options)
             : base(options)
         {

@@ -2,16 +2,20 @@
 @{
     Layout = null;
 }
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <style>
     .Rectangle {
         position: relative;
         width: 585px;
+        height: 550px;
         left: 420px;
         top: 50px;
         background: #FFFFFF;
         border: 2px solid #E5E5E5;
         box-sizing: border-box;
     }
+
     .navigation {
         position: absolute;
         width: 205px;
@@ -25,6 +29,112 @@
         line-height: 29px;
         color: #000000;
     }
+
+    .menu_item_price {
+        font-family: Montserrat;
+        position: relative;
+        left: 50px;
+    }
+
+    .desc {
+        font-family: Montserrat;
+        position: relative;
+        left: 50px;
+    }
+
+    .weight {
+        font-family: Montserrat;
+        position: relative;
+        left: 50px;
+    }
+
+    .menu_item_name {
+        font-family: Montserrat;
+        position: relative;
+        left: 50px;
+    }
+
+    .mealtimeId {
+        font-family: Montserrat;
+        position: relative;
+        left: 50px;
+    }
+
+    .addId {
+        font-family: Montserrat;
+        position: relative;
+    }
+    .add {
+        width: 525px;
+        position: relative;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+        left: 30px;
+    }
+    .add1 {
+        width: 525px;
+        position: relative;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+        left: 30px;
+    }
+    .add2 {
+        width: 525px;
+        position: relative;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+        left: 30px;
+    }
+    .add3 {
+        width: 525px;
+        position: relative;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+        left: 30px;
+    }
+    .addId {
+        width: 525px;
+        position: relative;
+        background: #FFFFFF;
+        border: 2px solid #FF6D03;
+        border-radius: 3px;
+        left: 30px;
+    }
+    .newimage {
+        font-family: Montserrat;
+        position: relative;
+        top: 20px;
+        left: 30px;
+    }
+    .logout {
+        position: relative;
+        top: 53px;
+        height: 31px;
+        background: #FF6D03;
+        border: 6px solid #FF6D03;
+        border-radius: 6px;
+        text-align: center;
+        width: 150px;
+        font-family: Montserrat;
+        left: 400px;
+    }
+    .zzzz {
+        position: relative;
+        right: 304px;
+        top: 100px;
+        background: #FF6D03;
+        border: 6px solid #FF6D03;
+        border-radius: 6px;
+        text-align: center;
+        width: 150px;
+        font-family: Montserrat;
+        height: 30px;
+        right: 273px;
+    }
 </style>
 @if (User.Identity.IsAuthenticated)
 {
@@ -34,10 +144,9 @@
     }
     else
     {
-        <p>ТУТ ЧАСТЬ АДМИНА</p>
         <a href="/"><div class="navigation">Главная</div></a>
         <div class="Rectangle">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <input type="hidden" value="@ViewBag.menu_items" />
                 <p class="menu_item_price">Цена блюда</p>
                 <input type="text" required="" name="menu_item_price" class="add" />
@@ -47,12 +156,18 @@
                 <input type="text" required="" name="weight" class="add2" />
                 <p class="menu_item_name">Название блюда</p>
                 <input type="text" required="" name="menu_item_name" class="add3" />
-                <p class="mealtimeId">ID типа блюда</p>
-                <input type="text" required="" name="mealtimeId" class="add4" />
+                <p class="mealtimeId">Id типа блюда</p>
+                <select name="mealtimeId" class="addId">
+                    @foreach (var d in ViewBag.mealtimes)
+                    {
+                        <option>@d.mealtimeId</option>
+                    }
+                </select>
+                <input class="newimage" type="file" name="uploadedFile" />
                 <input type="submit" value="Добавить" class="zzzz" />
             </form>
             <form method="post" asp-controller="Home" asp-action="Logout">
-                <input type="submit" value="Выход" />
+                <input class="logout" type="submit" value="Выход" />
             </form>
         </div>
     }

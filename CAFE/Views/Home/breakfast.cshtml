@@ -1,4 +1,5 @@
-﻿@{
+﻿@model CAFE.Models.admin
+@{
     Layout = null;
 }
 <!doctype html>
@@ -6,7 +7,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Завтраки</title>
-    <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -261,11 +262,20 @@
             width: 80px;
             font-family: Montserrat;
         }
+
+        .image {
+            width: 195px;
+            height: 195px;
+        }
+        .select {
+            position: relative;
+            bottom: 270px;
+            right: 700px;
+            height: 30px;
+        }
     </style>
 </head>
 <body>
-    <img src="../images/ellipse1.png" class="ellipse1">
-    <img src="../images/ellipse2.png" class="ellipse2">
     <a href="/"><div class="navigation">Главная</div></a>
     <a href="/menu"><div class="menu">> Меню</div></a>
     <a href="/menu/Завтраки"><div class="breakfast">> Завтраки</div></a>
@@ -277,17 +287,39 @@
         {
             @if (mi.mealtimeId == 1)
             {
-                <div class="item">
-                    <img src="../images/@mi.menu_item_name .png">
-                    <div class="item-title">@mi.menu_item_name</div>
-                    <div class="item-desc">@mi.desc</div>
-                    <div class="item-price">@mi.menu_item_price</div>
-                    <div class="rubl"><img src="../images/r.png" /></div>
-                    <div class="Weight">@mi.weight гр</div>
-                    <button class="add_item" data-id="@mi.menu_itemId">Добавить в корзину</button>
-                </div>
+        <div class="item">
+            <img class="image" src="../images/@mi.menu_item_name .png">
+            <div class="item-title">@mi.menu_item_name</div>
+            <div class="item-desc">@mi.desc</div>
+            <div class="item-price">@mi.menu_item_price</div>
+            <div class="rubl"><img src="../images/r.png" /></div>
+            <div class="Weight">@mi.weight гр</div>
+            <button class="add_item" data-id="@mi.menu_itemId">Добавить в корзину</button>
+        </div>
             }
-        }
+            }
+            @if (User.Identity.IsAuthenticated)
+            {
+                @if (User.Identity.Name == "admin")
+                {
+        <form method="post" asp-controller="Home" asp-action="Delete" class="select">
+            <select name="menu_itemId">
+                @foreach (var h in ViewBag.menu_items)
+                {
+                    @if (h.mealtimeId == 1)
+                    {
+                        @if (h.menu_itemId != null)
+                        { 
+                            <option>@h.menu_itemId</option>
+                        }
+                        
+                    }
+                }
+            </select>
+            <input type="submit" value="Удалить"/>
+        </form>
+                }
+            }   
     </div>
 </body>
 </html>

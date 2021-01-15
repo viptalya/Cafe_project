@@ -261,11 +261,19 @@
             width: 80px;
             font-family: Montserrat;
         }
+        .image {
+            width: 195px;
+            height: 195px;
+        }
+        .select {
+            position: relative;
+            bottom: 270px;
+            right: 700px;
+            height: 30px;
+        }
     </style>
 </head>
 <body>
-    <img src="../images/ellipse1.png" class="ellipse1">
-    <img src="../images/ellipse2.png" class="ellipse2">
     <a href="/"><div class="navigation">Главная</div></a>
     <a href="/menu"><div class="menu">> Меню</div></a>
     <a href="/menu/Десерты"><div class="breakfast">> Десерты</div></a>
@@ -278,7 +286,7 @@
             @if (mi.mealtimeId == 4)
             {
                 <div class="item">
-                    <img src="../images/@mi.menu_item_name .png">
+                    <img class="image" src="../images/@mi.menu_item_name .png">
                     <div class="item-title">@mi.menu_item_name</div>
                     <div class="item-desc">@mi.desc</div>
                     <div class="item-price">@mi.menu_item_price</div>
@@ -288,6 +296,22 @@
                 </div>
             }
         }
+        <form method="post" asp-controller="Home" asp-action="Delete" class="select">
+            <select name="menu_itemId" class="">
+                @foreach (var h in ViewBag.menu_items)
+                {
+                    @if (h.mealtimeId == 4)
+                    {
+                        @if (h.menu_itemId != null)
+                        {
+                            <option>@h.menu_itemId</option>
+                        }
+
+                    }
+                }
+            </select>
+            <input type="submit" value="Удалить" />
+        </form>
     </div>
 </body>
 </html>
