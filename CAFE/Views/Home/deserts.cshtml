@@ -296,22 +296,28 @@
                 </div>
             }
         }
-        <form method="post" asp-controller="Home" asp-action="Delete" class="select">
-            <select name="menu_itemId" class="">
-                @foreach (var h in ViewBag.menu_items)
-                {
-                    @if (h.mealtimeId == 4)
-                    {
-                        @if (h.menu_itemId != null)
+        @if (User.Identity.IsAuthenticated)
+        {
+            @if (User.Identity.Name == "admin")
+            {
+                <form method="post" asp-controller="Home" asp-action="Delete" class="select">
+                    <select name="menu_itemId" class="">
+                        @foreach (var h in ViewBag.menu_items)
                         {
-                            <option>@h.menu_itemId</option>
-                        }
+                            @if (h.mealtimeId == 4)
+                            {
+                                @if (h.menu_itemId != null)
+                                {
+                                    <option>@h.menu_itemId</option>
+                                }
 
-                    }
-                }
-            </select>
-            <input type="submit" value="Удалить" />
-        </form>
-    </div>
+                            }
+                        }
+                    </select>
+                    <input type="submit" value="Удалить" />
+                </form>
+            }
+        }
+            </div>
 </body>
 </html>

@@ -34,6 +34,7 @@
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
+        text-transform: capitalize;
     }
 
     .add1 {
@@ -44,6 +45,7 @@
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
+        text-transform: capitalize;
     }
 
     .add2 {
@@ -54,6 +56,7 @@
         background: #FFFFFF;
         border: 2px solid #FF6D03;
         border-radius: 3px;
+        text-transform: capitalize;
     }
 
     .add3 {
@@ -183,16 +186,16 @@
         <input required="" class="add2" type="text" asp-for="c_Pname" />
         <span asp-validation-for="c_Pname" />
         <label class="Number" asp-for="c_phone">Номер телефона</label>
-        <input required="" class="add3" type="text" asp-for="c_phone" />
+        <input required="" pattern="8[0-9]{10}" class="add3" type="text" asp-for="c_phone" />
         <span asp-validation-for="c_phone" />
         <label class="Email" asp-for="c_email">Почта</label>
-        <input required="" class="add4" type="text" asp-for="c_email" />
+        <input type="text" required="" class="add4" asp-for="c_email" />
         <span asp-validation-for="c_email" />
         <label class="Login" asp-for="c_login">Логин</label>
         <input required="" class="add5" type="text" asp-for="c_login" />
         <span asp-validation-for="c_login" />
         <label class="Password" asp-for="c_password">Пароль</label>
-        <input required="" class="add6" asp-for="c_password" />
+        <input required="" pattern="[0-9]{1,}[A-Z]{1}" class="add6" asp-for="c_password" />
         <span asp-validation-for="c_password" />
         <input type="submit" value="Зарегистрироваться" class="zzzz"/>
     </form>
